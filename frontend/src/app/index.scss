@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+  --base-bg-color: #F3F3F3;
+  --base-bg: var(--base-bg-color);
+  
+  --icons-dark-color: #242424;
+  --icons-bright-color: #F3F3F3;
+  --icons-color: var(--icons-dark-color);
+  --icon-size: 36px;
+
+  --text-dark-color: #242424;
+  --text-bright-color: #F3F3F3;
+  --text-color: var(--text-dark-color);
+
+  --header-font-size: 20px;
+  --nav-font-size: 10px;
+
+  --person-name-font-size: 48px;
+  --person-text-font-size: 14px;
+  --person-info-font-size: 12px;
+  
+  --tag-font-size: 16px;
+  --tag-height: 45px;
+  --tag-empty-bg: #221010;
+  --tag-text-color: #F3F3F3;
+
+  --input-label-font-size: 11px;
+  --input-font-size: 14px;
+  --input-bg-color: #D9D9D9;
+  --input-bg: var(--input-bg-color);
+  --input-button-bg-color: #242424;
+
+  --base-font-size: 20px;
+  --base-headline-font-size: 48px;
+
+  --page-button-font-size: 24px;
+  --page-button-small-font-size: 20px;
+  --page-button-smaller-font-size: 18px;
+
+  --hr-size: 1px;
+  --hr-color: #242424;
+}

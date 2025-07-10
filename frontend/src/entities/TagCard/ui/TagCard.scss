@@ -1,0 +1,89 @@
+.tag-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6em;
+
+  padding: 1rem;
+
+  color: var(--tag-text-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  height: var(--tag-height);
+
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  .bg-icons {
+    position: absolute;
+
+    width: 100%;
+
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3em;
+    
+    .top, .middle, .bottom {
+      position: relative;
+      display: flex;
+      gap: 0.8em;
+      transform: translateX(24px);
+    }
+
+    .middle {
+      padding-right: 0.8em;
+    }
+
+    .icon {
+      // background-color: rgba(255, 255, 255);
+      width: 1.25em;
+      height: 1.25em;
+      opacity: 0.15;
+
+      svg {
+        --icon-size: 1.4em;
+      }
+    }
+  }
+
+  .gradient-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--tag-empty-bg);
+    opacity: 1;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url("/images/noise.jpg");
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5em;
+    
+    span {
+      color: var(--tag-text-color);
+      font-size: var(--tag-font-size);
+    }
+
+    svg {
+      --icon-size: 1.25em;
+      flex-shrink: 0;
+    }
+  }
+}

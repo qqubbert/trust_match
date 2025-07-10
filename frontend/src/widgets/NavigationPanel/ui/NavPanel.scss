@@ -1,15 +1,29 @@
 .nav-panel {
+  width: 100%;
 
-  .nav-item {
+  position: fixed;
 
-    svg {
-      
-      path {
-        fill: #242424;
-      }
+  bottom: 0;
+  z-index: 11;
 
-    }
+  display: flex;
+
+  background: linear-gradient(0deg, #1b1b1ba6, #1b1b1b00);
+
+  font-size: var(--nav-font-size);
+
+  nav {
+    padding: 1em;
+
+    display: flex;
+
+    flex: 1;
+    gap: 1em;
+
+    align-items: center;
+    justify-content: center;
 
   }
 
+  
 }

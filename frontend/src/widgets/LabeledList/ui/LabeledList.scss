@@ -1,0 +1,23 @@
+.labeled-list {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 0.5rem;
+
+  padding: 0.5rem;
+
+  .label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+    
+    opacity: 0.25;
+
+    hr {
+      flex: 1;
+      border: var(--hr-size) solid var(--hr-color);
+    }
+  }
+}

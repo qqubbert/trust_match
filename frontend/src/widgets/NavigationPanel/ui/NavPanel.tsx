@@ -1,20 +1,30 @@
-import { type FC } from "react"
+import { useState, type FC } from 'react'
 
 import './NavPanel.scss'
 
-import { NavItem } from "@shared/ui/NavItem/ui/NavItem"
+import { NavItem } from '@entities/NavItem';
 
-import Chats from "@icons/Chats/Chats.svg?react"
+import { navPageLinksArray } from '../../../shared/config/pageLinks';
 
 type NavigationPanelProps = {
   className?: string,
 }
 
-export const NavPanel: FC<NavigationPanelProps> = ({ className }) => {
+export const NavPanel: FC<NavigationPanelProps> = ({ className = '' }) => {
+  const [selectedPage, setSelectedPage] = useState(2);
+
+  function navClickFunc(i: number) {
+    setSelectedPage(i);
+  }
+
   return (
-    <header className={`${className} nav-panel`}>
+    <header className={`${className} nav-panel `}>
       <nav>
-        <NavItem icon={Chats} title={`Чаты`}/>
+        {navPageLinksArray.map((link, i)=>{
+          return (
+            <NavItem link={link} key={link.path} selected={selectedPage === i} clickFunc={()=>{navClickFunc(i)}}/>
+          )
+        })}
       </nav>
     </header>
   )

@@ -1,0 +1,48 @@
+.nav-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.2em;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+
+  cursor: pointer;
+
+  opacity: 0.3;
+
+  transition: all ease-in-out 0.1s;
+
+  --text-color: var(--text-dark-color);
+  --icons-color: var(--icons-dark-color);
+
+  span {
+    transition: all ease-in-out 0.1s;
+  }
+
+  svg {
+    // --icon-size: 36px;
+
+    path {
+      transition: all ease-in-out 0.1s;
+    }
+  }
+
+  &:hover {
+    --icons-color: var(--icons-bright-color);
+    --text-color: var(--text-bright-color);
+
+    opacity: 0.6;
+  }
+
+  &.selected {
+    --icons-color: var(--icons-bright-color);
+    --text-color: var(--text-bright-color);
+
+    opacity: 1;
+  }
+}
