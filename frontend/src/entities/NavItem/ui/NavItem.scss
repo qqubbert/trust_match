@@ -17,31 +17,31 @@
 
   transition: all ease-in-out 0.1s;
 
-  --text-color: var(--text-dark-color);
-  --icons-color: var(--icons-dark-color);
+  --text-color: var(--nav-text-color);
+  --icons-color: var(--nav-icons-color);
 
-  span {
+  > span {
     transition: all ease-in-out 0.1s;
   }
 
-  svg {
+  > svg {
     // --icon-size: 36px;
 
-    path {
+    > path {
       transition: all ease-in-out 0.1s;
     }
   }
 
   &:hover {
-    --icons-color: var(--icons-bright-color);
-    --text-color: var(--text-bright-color);
+    --icons-color: var(--nav-icons-color);
+    --text-color: var(--nav-text-color);
 
     opacity: 0.6;
   }
 
   &.selected {
-    --icons-color: var(--icons-bright-color);
-    --text-color: var(--text-bright-color);
+    --icons-color: var(--nav-selected-icons-color);
+    --text-color: var(--nav-selected-text-color);
 
     opacity: 1;
   }

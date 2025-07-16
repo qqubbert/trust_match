@@ -1,5 +1,11 @@
 .page-header {
-  position: sticky;
+  height: var(--header-height);
+
+  position: fixed;
+
+  height: var(--header-height, 4rem);
+
+  width: 100%;
 
   top: 0;
   z-index: 10;
@@ -7,11 +13,12 @@
   display: flex;
   flex-direction: row;
 
-  background: linear-gradient(180deg, #1b1b1ba6, #1b1b1b00);
+  background: linear-gradient(180deg, var(--base-gradient-color-1), var(--base-gradient-color-2));
   
   font-size: calc(var(--header-font-size));
+  color: var(--header-text-color);
 
-  section {
+  > section {
     display: flex;
     flex: 1;
     align-items: center;
@@ -25,11 +32,12 @@
     &.btns {
       justify-content: right;
 
-      button {
+      > button {
         background-color: transparent;
 
-        svg {
+        > svg {
           --icon-size: 24px;
+          --icons-color: var(--header-icons-color);
         }
       }
     }

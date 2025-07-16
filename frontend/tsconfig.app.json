@@ -34,7 +34,7 @@
       "@widgets/*": ["widgets/*"],
       "@icons/*": ["shared/assets/icons/*"],
       "@images/*": ["shared/assets/images/*"],
-      "@config/*": ["shared/config/*"]
+      "@config/*": ["shared/config/*"],
     }
   },
   "include": ["src"]

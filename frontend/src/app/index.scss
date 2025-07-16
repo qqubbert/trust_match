@@ -14,10 +14,21 @@ html {
   --text-color: var(--text-dark-color);
 
   --header-font-size: 20px;
+  --header-text-color: var(--text-dark-color);
+  --header-icons-color: var(--icons-dark-color);
+  --header-height: 50px;
+
   --nav-font-size: 10px;
+  --nav-icons-color: var(--text-dark-color);
+  --nav-text-color: var(--text-dark-color);
+  --nav-selected-icons-color: var(--text-bright-color);
+  --nav-selected-text-color: var(--text-bright-color);
+  --nav-height: 70px;
 
   --person-name-font-size: 48px;
+  --person-name-font-weight: 900;
   --person-text-font-size: 14px;
+  --person-text-font-weight: 500;
   --person-info-font-size: 12px;
   
   --tag-font-size: 16px;
@@ -30,6 +41,7 @@ html {
   --input-bg-color: #D9D9D9;
   --input-bg: var(--input-bg-color);
   --input-button-bg-color: #242424;
+  --input-text-color: var(--text-dark-color);
 
   --base-font-size: 20px;
   --base-headline-font-size: 48px;
@@ -39,5 +51,28 @@ html {
   --page-button-smaller-font-size: 18px;
 
   --hr-size: 1px;
-  --hr-color: #242424;
+  --hr-color: var(--text-color);
+
+  --base-border-color: #1b1b1b79;
+  --base-border: var(--base-border-color) 1px solid;
+
+  --base-shadow-color: #1b1b1b31;
+  --base-shadow: 0px 2px 4px 1px var(--base-shadow-color);
+
+  --base-gradient-color-1:  #1b1b1bd2;
+  --base-gradient-color-2: #1b1b1b00;
+}
+
+html[data-theme='dark'] {
+  --base-bg-color: #1B1B1B;
+
+  --text-color: var(--text-bright-color);
+
+  --hr-color: #F3F3F3;
+
+  --header-text-color: var(--text-bright-color);
+  --header-icons-color: var(--icons-bright-color);
+  --nav-icons-color: var(--text-bright-color);
+  --nav-text-color: var(--text-bright-color);
+  --base-gradient-color-1:  #1b1b1b;
 }

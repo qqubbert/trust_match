@@ -1,0 +1,50 @@
+.person-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0rem 0.8rem 0.8rem 0.8rem;
+
+  > hr {
+    height: var(--hr-size);
+    border: var(--hr-size) var(--hr-color) solid;
+  }
+
+  > p {
+    font-size: var(--person-text-font-size);
+    font-weight: var(--person-text-font-weight);
+
+    padding: 0 0.5rem;
+
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+
+    display: -webkit-box;
+    display: -moz-box;
+  }
+
+  > .name-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    > .name-and-btn {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 0.5rem;
+
+      > h1 {
+        font-weight: var(--person-name-font-weight);
+        font-size: var(--person-name-font-size);
+      }
+    }
+  }
+}

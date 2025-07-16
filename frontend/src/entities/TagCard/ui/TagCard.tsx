@@ -1,4 +1,4 @@
-import { useMemo, type FC } from "react";
+import { useEffect, useMemo, type FC } from "react";
 
 import "./TagCard.scss";
 
@@ -22,10 +22,11 @@ export const TagCard: FC<TagCardProps> = ({ tagData, className = "" }) => {
     [gradientConfig]
   );
 
-  // useEffect(()=>{
-  //   console.log(tagData);
-  //   console.log(gradient);
-  // }, [tagData, gradient]);
+  useEffect(()=>{
+    console.log("tagData: ");
+    console.log(tagData);
+    // console.log(gradient);
+  }, [tagData, gradient]);
 
   return (
     <>

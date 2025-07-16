@@ -2,20 +2,18 @@ import type { FC, ReactNode } from "react";
 
 import './LabeledList.scss';
 
+import { Label } from "@shared/ui/Label";
+
 type LabeledListProps = {
   title?: string;
   children: ReactNode,
 }
 
-export const LabeledList: FC<LabeledListProps> = ({children, title }) => {
+export const LabeledList: FC<LabeledListProps> = ({children, title = "" }) => {
   return (
     <>
       <div className="labeled-list">
-        <div className="label-container">
-          <hr />
-          {title}
-          <hr />
-        </div>
+        <Label title={title}/>
         {children}
       </div>
     </>

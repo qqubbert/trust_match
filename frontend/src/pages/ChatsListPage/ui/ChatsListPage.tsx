@@ -1,4 +1,4 @@
-import { PageHeader } from "@widgets/NavigationPanel/PageHeader";
+import { PageHeader } from "@widgets/PageHeader";
 
 export function ChatsListPage() {
   return (

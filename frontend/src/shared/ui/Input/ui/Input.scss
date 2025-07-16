@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0.8rem;
   overflow: hidden;
   width: 100%;
 
@@ -20,6 +20,8 @@
 
     text-overflow: ellipsis;
     overflow: hidden;
+
+    opacity: 0.5;
   }
 
   .input-and-btn {
@@ -29,37 +31,44 @@
 
     background: var(--input-bg);
 
-    border-radius: 0.5em 1em 1em 0.5em;
-    
+    border-radius: 0.5em 1.5em 1.5em 0.5em;
+
     font-size: var(--input-font-size);
 
     max-height: 3em;
     align-items: center;
 
+    box-shadow: var(--base-shadow);
+
     input {
       padding: 1em;
-      
+
       flex: 1;
-      
+
       border-radius: 0.5em;
 
       background-color: transparent;
+
+      color: var(--input-text-color);
     }
 
     button {
-      position: relative;
+      position: absolute;
 
       flex-shrink: 0;
 
       height: 4em;
       width: 4em;
 
+      right: 1em;
+
       border-radius: 50%;
 
       background-color: var(--input-button-bg-color);
+
+      box-shadow: var(--base-shadow);
       
       --icons-color: var(--icons-bright-color);
-
     }
   }
 }

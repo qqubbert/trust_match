@@ -4,7 +4,7 @@ import './NavPanel.scss'
 
 import { NavItem } from '@entities/NavItem';
 
-import { navPageLinksArray } from '../../../shared/config/pageLinks';
+import { navPageLinksArray } from '@shared/config/pageLinks';
 
 type NavigationPanelProps = {
   className?: string,

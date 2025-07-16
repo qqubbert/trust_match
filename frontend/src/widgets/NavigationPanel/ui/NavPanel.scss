@@ -1,5 +1,6 @@
 .nav-panel {
   width: 100%;
+  height: var(--nav-height);
 
   position: fixed;
 
@@ -8,11 +9,11 @@
 
   display: flex;
 
-  background: linear-gradient(0deg, #1b1b1ba6, #1b1b1b00);
+  background: linear-gradient(0deg, var(--base-gradient-color-1), var(--base-gradient-color-2));
 
   font-size: var(--nav-font-size);
 
-  nav {
+  > nav {
     padding: 1em;
 
     display: flex;

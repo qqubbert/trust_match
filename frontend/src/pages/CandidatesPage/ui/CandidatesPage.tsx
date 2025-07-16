@@ -1,84 +1,77 @@
-import { PageHeader } from '@widgets/NavigationPanel/PageHeader';
+import { PageHeader } from "@widgets/PageHeader";
 
-import { Input } from '@shared/ui/Input/ui/Input';
-import { TagCard } from '@entities/TagCard/ui/TagCard';
-import { LabeledList } from '@widgets/LabeledList/ui/LabeledList';
 
-import type { HorizontalKeyword, VerticalKeyword } from '@shared/types/GradientTypes';
+import { UserCard } from "@widgets/UserCard";
 
-import Anime from '@icons/TagIcons/Content/Anime.svg?react';
-import AnimeBG from '@icons/TagIcons/Content/AnimeBG.svg?react';
-import Games from '@icons/TagIcons/Content/Games.svg?react';
-import GamesBG from '@icons/TagIcons/Content/GamesBG.svg?react';
-// import Movies from '@icons/TagIcons/Content/Movies.svg?react';
-// import MoviesBG from '@icons/TagIcons/Content/MoviesBG.svg?react';
-// import Series from '@icons/TagIcons/Content/Series.svg?react';
-// import SeriesBG from '@icons/TagIcons/Content/SeriesBG.svg?react';
-import Basketball from '@icons/TagIcons/Sport/Basketball.svg?react';
-import BasketballBG from '@icons/TagIcons/Sport/BasketballBG.svg?react';
-import Football from '@icons/TagIcons/Sport/Football.svg?react';
-import FootballBG from '@icons/TagIcons/Sport/FootballBG.svg?react';
+import { useTagsStore } from "@shared/data/useTagsStore";
 
 export function CandidatesPage() {
-  const TagData = [
+  const tags = useTagsStore();
+
+  const users = [
     {
-      title: 'Аниме',
-      Icon: Anime,
-      BgIcon: AnimeBG,
-      gradientConfig: [
-        { color: '#DE4327', xPos: 'left' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#F8B57E', xPos: 'right' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
+      person: {
+        name: "Даша",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
+      },
+      tags: [
+        tags.content.games,
+      ],
+      images: [
+        { src: "/images/usersPreview/girls/dasha/dasha1.png", alt: "Даша" },
+        { src: "/images/usersPreview/girls/dasha/dasha2.jpg", alt: "Даша" },
+        { src: "/images/usersPreview/girls/dasha/dasha3.jpg", alt: "Даша" },
+        { src: "/images/usersPreview/girls/dasha/dasha4.jpg", alt: "Даша" },
+        { src: "/images/usersPreview/girls/dasha/dasha5.jpg", alt: "Даша" },
       ],
     },
     {
-      title: 'Компьютерные игры',
-      Icon: Games,
-      BgIcon: GamesBG,
-      gradientConfig: [
-        { color: '#052e36', xPos: 'left' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#1EB875', xPos: 'center' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#052e36', xPos: 'right' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
+      person: {
+        name: "Юля",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
+      },
+      tags: [
+        tags.content.games,
+        tags.content.anime,
+        tags.sport.basketball,
+      ],
+      images: [
+        { src: "/images/usersPreview/girls/girl1/girl1_1.jpg", alt: "Юля" },
       ],
     },
     {
-      title: 'Баскетбол',
-      Icon: Basketball,
-      BgIcon: BasketballBG,
-      gradientConfig: [
-        { color: '#533831', xPos: 'left' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#C7661D', xPos: 'center' as HorizontalKeyword, yPos: 'bottom' as VerticalKeyword },
-        { color: '#EC3B3C', xPos: '60%' as HorizontalKeyword, yPos: '0%' as VerticalKeyword },
-        { color: '#7D3257', xPos: 'right' as HorizontalKeyword, yPos: 'bottom' as VerticalKeyword },
+      person: {
+        name: "Маша",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
+      },
+      tags: [
+        tags.content.anime,
+        tags.content.games,
       ],
-    },
-    {
-      title: 'Футбол',
-      Icon: Football,
-      BgIcon: FootballBG,
-      gradientConfig: [
-        { color: '#66af3c', xPos: 'left' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#ffb780', xPos: 'center' as HorizontalKeyword, yPos: 'center' as VerticalKeyword },
-        { color: '#c06223', xPos: 'right' as HorizontalKeyword, yPos: 'bottom' as VerticalKeyword },
+      images: [
+        { src: "/images/usersPreview/girls/girl2/girl2_1.jpg", alt: "Маша" },
+        { src: "/images/usersPreview/girls/girl2/girl2_2.jpg", alt: "Маша" },
+        { src: "/images/usersPreview/girls/girl2/girl2_3.jpg", alt: "Маша" },
+        { src: "/images/usersPreview/girls/girl2/girl2_4.jpg", alt: "Маша" },
       ],
     },
   ];
 
   return (
     <>
-      <PageHeader title='Кандидаты' />
-      <div className='page'>
-        <LabeledList title='Интересы'>
-          {TagData.map((tag, i)=>{
+      <PageHeader title="Кандидаты" />
+      <div className="page">
+        {users && users.length > 0 ? (
+          users.map((user)=>{
             return (
-              <TagCard tagData={tag} key={`tag-${i}`}/>
+              <UserCard user={user}/>
             )
-          })}
-        </LabeledList>
-        <Input
-          inputLabel='Напишите, если понравилась анкета!'
-          placeholder='Введите сообщение...'
-        />
-        CandidatesPage
+          })
+        ) : (<></>)}
+        {/* CandidatesPage */}
       </div>
     </>
   );

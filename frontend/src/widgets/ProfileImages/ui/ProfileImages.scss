@@ -1,0 +1,157 @@
+.profile-images-with-btns {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: start;
+  justify-content: right;
+  border-radius: 1rem;
+  overflow: hidden;
+  user-select: none;
+
+  pointer-events: none;
+  filter: brightness(0.2);
+
+  &.visible {
+    pointer-events: all;
+    filter: brightness(1);
+
+    .profile-images {
+      filter: blur(0);
+    }
+
+    .arrow {
+      opacity: 0.5;
+    }
+  }
+
+  &.own {
+    height: 50vh;
+    border-radius: 0;
+    overflow: visible;
+    .arrow {
+      // padding: 1rem;
+      background: transparent;
+      &.next {
+        right: 0;
+        background: transparent;
+      }
+
+      &.prev {
+        left: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  > .arrow {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    padding: 0.25rem;
+    align-items: center;
+    background: transparent;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &.transparent {
+      opacity: 0;
+    }
+
+    svg {
+      --icon-size: 2.4rem;
+      path {
+        --icons-color: var(--icons-bright-color);
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+      &.transparent {
+        opacity: 0;
+      }
+    }
+
+    &.next {
+      right: 0;
+      background: linear-gradient(-90deg, #00000080, transparent);
+    }
+
+    &.prev {
+      left: 0;
+      background: linear-gradient(90deg, #00000080, transparent);
+    }
+  }
+
+  > .profile-images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    // overflow-x: auto;
+    align-items: center;
+    justify-content: start;
+    // gap: 0.5rem;
+    // transform: translateX(-44%);
+    // flex-direction: column;
+    transition: 0.2s ease-in-out all;
+    position: relative;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    touch-action: pan-x;
+
+    filter: blur(15px);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > .imgs-container {
+      // position: relative;
+      // left: 0%;
+      width: fit-content;
+      // width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // gap: 0.5rem;
+      // margin: 0 25%;
+      transition: 0.3s ease-in-out all;
+
+      .profile-image-wrapper {
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        // padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: filter 0.3s ease-in-out;
+
+        &.selected {
+          filter: brightness(1);
+        }
+      }
+
+      > .transparent {
+        opacity: 0;
+      }
+    }
+
+    &.visible {
+    }
+
+    &.own {
+    }
+  }
+}
