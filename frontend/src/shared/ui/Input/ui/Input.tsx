@@ -15,7 +15,7 @@ type InputProps = {
   sendFunc?: () => void;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps> (({
+export const CustomInput = forwardRef<HTMLInputElement, InputProps> (({
   defaultValue = "",
   inputLabel = "",
   changeFunc = () => {},

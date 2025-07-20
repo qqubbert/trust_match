@@ -1,8 +1,8 @@
-import { useEffect, useMemo, type FC } from "react";
+import { useMemo, type FC } from "react";
 
 import "./TagCard.scss";
 
-import { generateGradientBackground } from "@shared/funcs/generateGradient";
+import { generateGradientBackground } from "@shared/lib/generateGradient";
 
 import type { TagType } from "@shared/types/TagType";
 
@@ -22,12 +22,6 @@ export const TagCard: FC<TagCardProps> = ({ tagData, className = "" }) => {
     [gradientConfig]
   );
 
-  useEffect(()=>{
-    console.log("tagData: ");
-    console.log(tagData);
-    // console.log(gradient);
-  }, [tagData, gradient]);
-
   return (
     <>
       <div className={`tag-card ${className}`}>
@@ -38,7 +32,7 @@ export const TagCard: FC<TagCardProps> = ({ tagData, className = "" }) => {
           }}
         />
         <div className="noise-overlay" />
-        <div className="bg-icons">
+        <div className={`bg-icons ${tagData.hasBGIconsRotation ? "with-rotation" : ""}`}>
           {bgIconLayers.map((layer) => {
             return (
               <div className={layer} key={layer}>

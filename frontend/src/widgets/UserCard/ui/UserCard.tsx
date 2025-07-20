@@ -1,52 +1,66 @@
-import { useEffect, useState, type FC } from 'react';
-import type { UserType } from '@shared/types/UserTypes';
+import { useState, type FC } from "react";
+import type { UserType } from "@shared/types/UserTypes";
 
-import './UserCard.scss';
+import "./UserCard.scss";
 
-import { ProfileImages } from '@widgets/ProfileImages';
-import { LabeledList } from '@widgets/LabeledList';
-import { TagCard } from '@entities/TagCard';
-import { Input } from '@shared/ui/Input';
-import { PersonInfo } from '@widgets/PersonInfo';
+import { ProfileImages } from "@widgets/ProfileImages";
+import { LabeledList } from "@widgets/LabeledList";
+import { TagCard } from "@entities/TagCard";
+import { CustomInput } from "@shared/ui/Input";
+import { PersonInfo } from "@widgets/PersonInfo";
+import { OverflowingList } from "@widgets/OverflowingList";
+
+import { useLongPress } from "@shared/lib/useLongPress";
 
 type CandidateCardProps = {
-  user: UserType,
-}
+  user: UserType;
+  classes?: string;
+};
 
-export const UserCard: FC<CandidateCardProps> = ({ user }) => {
-
+export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
   const [isInfoHidden, setIsInfoHidden] = useState(false);
-  
-  // useEffect(()=>{
-  //   console.log(user);
-  // },[]);
+
+  const longPressRef = useLongPress(
+    () => setIsInfoHidden(true),
+    () => setIsInfoHidden(false),
+    250
+  );
 
   return (
-    <div className={`user-card-container ${!isInfoHidden ? "show-info" : ""}`}>
+    <div
+      className={`user-card-container ${!isInfoHidden ? "show-info" : ""} ${classes}`}
+      ref={longPressRef}
+    >
       <div className="user-card">
         {/* <ProfileImages images={user.images} isOwn={false} isVisible={false}/> */}
-        <ProfileImages images={user.images} isOwn={false} isVisible={true}/>
+        <ProfileImages
+          images={user.images}
+          isOwn={false}
+          isVisible={true}
+          isFullSize={true}
+        />
         <div className="user-info">
           <div className="top">
             <LabeledList title={`Общие интересы`}>
               {user.tags && user.tags.length > 0 ? (
-                user.tags.map((tag)=>{
-                  return (
-                    <TagCard tagData={tag}/>
-                  )
-                })
-              ) : (<></>)}
+                <OverflowingList renderItem={(tag)=><TagCard tagData={tag}/>} items={user.tags} maxCount={3} overflowText={["общий интерес", 'общих интереса', 'общих интересов']}/>
+              ) : (
+                <></>
+              )}
             </LabeledList>
           </div>
           <div className="bottom">
-            <PersonInfo person={user.person}/>
+            <PersonInfo person={user.person} />
+            <p className="hint">
+              Нажмите, чтобы посмотреть подробную информацию
+            </p>
           </div>
         </div>
       </div>
-      <Input
+      <CustomInput
         inputLabel="Напишите, если понравилась анкета!"
         placeholder="Введите сообщение..."
       />
     </div>
-  )
-}
+  );
+};

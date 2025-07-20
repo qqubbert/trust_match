@@ -1,0 +1,9 @@
+.page.single-chat {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+
+  > .messages {
+    flex: 1;
+  }
+}

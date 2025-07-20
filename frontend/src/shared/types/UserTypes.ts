@@ -7,6 +7,7 @@ export type PersonInfoType = {
 };
 
 export type UserType = {
+  id: number,
   person: PersonInfoType,
   images: ImageType[],
   tags: TagType[],

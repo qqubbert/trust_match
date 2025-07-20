@@ -11,27 +11,29 @@ import { GamesListPages } from '../../pages/GamesListPage';
 import { ChatsListPage } from '../../pages/ChatsListPage';
 import { ProfilePage } from '../../pages/ProfilePage';
 import { MailPage } from '../../pages/MailPage';
+import { SingleChatPage } from '@pages/SingleChat';
 
 export type LinkType = {
-  icon: ComponentType<React.SVGProps<SVGSVGElement>>,
-  path: string,
-  title: string,
-  element: ReactNode,
+  icon: ComponentType<React.SVGProps<SVGSVGElement>>;
+  path: string;
+  title: string;
+  element: ReactNode;
+  link: (params: string[]) => string;
 }
 
 export const navPageLinks: Record<string, LinkType> = {
-  chats: { path: 'chats', icon: Chats, title: 'Чаты', element: <ChatsListPage /> },
-  games: { path: 'games', icon: Games, title: 'Игры', element: <GamesListPages /> },
-  candidates: { path: '', icon: Candidates, title: 'Кандидаты', element: <CandidatesPage /> },
-  mail: { path: 'mail', icon: Mail, title: 'Советы', element: <MailPage /> },
-  profile: { path: 'profile', icon: Profile, title: 'Профиль', element: <ProfilePage /> },
+  chats: { link: ()=> `/chats`, path: 'chats', icon: Chats, title: 'Чаты', element: <ChatsListPage /> },
+  games: { link: ()=> `/games`, path: 'games', icon: Games, title: 'Игры', element: <GamesListPages /> },
+  candidates: { link: ()=> `/`, path: '', icon: Candidates, title: 'Кандидаты', element: <CandidatesPage /> },
+  mail: { link: ()=> `/mail`, path: 'mail', icon: Mail, title: 'Советы', element: <MailPage /> },
+  profile: { link: ()=> `/profile`, path: 'profile', icon: Profile, title: 'Профиль', element: <ProfilePage /> },
 };
 
 export const allPageLinks: Record<string, LinkType> = {
   ...navPageLinks,
-  candidatesHistory: { path: 'candidates_history', icon: Candidates, title: 'История кандидатов', element: <CandidatesPage/> },
-  singleGame: { path: 'games/:gameId', icon: Games, title: 'Игра', element: <GamesListPages/> },
-  singleChat: { path: 'chats/:chatId', icon: Chats, title: 'Чат', element: <ChatsListPage/> },
+  candidatesHistory: { link: ()=> `/candidates_history`, path: 'candidates_history', icon: Candidates, title: 'История кандидатов', element: <CandidatesPage/> },
+  singleGame: { link: (params) => `/games/${params[0]}`, path: 'games/:gameId', icon: Games, title: 'Игра', element: <GamesListPages/> },
+  singleChat: { link: (params) => `/chats/${params[0]}`, path: 'chats/:chatId', icon: Chats, title: 'Чат', element: <SingleChatPage/> },
 };
 
 export const navPageLinksArray: LinkType[] = Object.values(navPageLinks);

@@ -1,31 +1,40 @@
-import { useState, type FC } from 'react'
+import {  type FC } from "react";
+import { useLocation } from "react-router-dom";
 
-import './NavPanel.scss'
+import "./NavPanel.scss";
 
-import { NavItem } from '@entities/NavItem';
+import { NavItem } from "@entities/NavItem";
 
-import { navPageLinksArray } from '@shared/config/pageLinks';
+import { navPageLinksArray } from "@shared/config/pageLinks";
 
 type NavigationPanelProps = {
-  className?: string,
-}
+  className?: string;
+};
 
-export const NavPanel: FC<NavigationPanelProps> = ({ className = '' }) => {
-  const [selectedPage, setSelectedPage] = useState(2);
+export const NavPanel: FC<NavigationPanelProps> = ({ className = "" }) => {
+  const location = useLocation();
 
-  function navClickFunc(i: number) {
-    setSelectedPage(i);
-  }
+  const getSelectedIndex = () => {
+    const currentPath = location.pathname.replace(/^\/+/, "");
+    return navPageLinksArray.findIndex((link) => currentPath === link.path);
+  };
+
+  const selectedIndex = getSelectedIndex();
 
   return (
     <header className={`${className} nav-panel `}>
       <nav>
-        {navPageLinksArray.map((link, i)=>{
+        {navPageLinksArray.map((pageLink, i) => {
           return (
-            <NavItem link={link} key={link.path} selected={selectedPage === i} clickFunc={()=>{navClickFunc(i)}}/>
-          )
+            <NavItem
+              link={pageLink}
+              key={pageLink.path}
+              selected={selectedIndex === i}
+              clickFunc={() => {}}
+            />
+          );
         })}
       </nav>
     </header>
-  )
-}
+  );
+};

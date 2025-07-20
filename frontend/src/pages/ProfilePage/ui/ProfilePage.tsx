@@ -16,8 +16,6 @@ import { useTagsStore } from "@shared/data/useTagsStore";
 export function ProfilePage() {
   const tags = useTagsStore();
 
-  console.log(tags);
-
   const TagData = [
     tags.content.games,
     tags.content.anime,
@@ -42,8 +40,8 @@ export function ProfilePage() {
   return (
     <>
       <PageHeader title="Профиль" />
-      <div className="page">
-        <ProfileImages images={ImgsData} isOwn={true} isVisible={true}/>
+      <div className="page profile">
+        <ProfileImages images={ImgsData} isOwn={true} isVisible={true} isFullSize={false}/>
         <PersonInfo person={PersonData}/>
         <LabeledList title="Интересы">
           {TagData.map((tag, i) => {

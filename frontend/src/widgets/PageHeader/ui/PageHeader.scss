@@ -23,9 +23,18 @@
     flex: 1;
     align-items: center;
     padding: 0.5em 0.8em;
+    gap: 0.5rem;
     
     &.info {
       justify-content: left;
+
+      > .back-btn {
+        background-color: transparent;
+
+        > svg {
+          --icon-size: 24px;
+        }
+      }
 
     }
     

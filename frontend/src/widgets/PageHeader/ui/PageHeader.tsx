@@ -1,24 +1,45 @@
-import type { FC } from "react"
+import type { FC, ReactNode } from "react";
+import { Link } from "react-router-dom";
 
-import './PageHeader.scss'
+import "./PageHeader.scss";
 
-import Menu from '@icons/Menu/DotsMenu.svg?react'
+import Menu from "@icons/Menu/DotsMenu.svg?react";
+
+import Back from '@icons/Arrows/ArrowLeft.svg?react';
+
+import { allPageLinks } from "@shared/config/pageLinks";
 
 type PageHeaderProps = {
-  title: string,
-}
+  title: string;
+  hasBackBtn?: boolean;
+  leftBtns?: ReactNode;
+  infoLeft?: ReactNode;
+  infoRight?: ReactNode;
+  backLink?: string;
+};
 
-export const PageHeader: FC<PageHeaderProps> = ({ title = "" }) => {
+export const PageHeader: FC<PageHeaderProps> = ({
+  hasBackBtn = false,
+  title = "",
+  leftBtns,
+  infoLeft,
+  infoRight,
+  backLink = "",
+}) => {
   return (
     <header className="page-header">
       <section className="info">
+        {hasBackBtn && <Link to={backLink} className="back-btn"><Back /></Link>}
+        {infoLeft}
         <span>{title}</span>
+        {infoRight}
       </section>
       <section className="btns">
+        {leftBtns}
         <button>
           <Menu />
         </button>
       </section>
     </header>
-  )
-}
+  );
+};

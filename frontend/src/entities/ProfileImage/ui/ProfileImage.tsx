@@ -14,7 +14,7 @@ type ProfileImageProps = {
 export const ProfileImage: FC<ProfileImageProps> = ({image, isSelected = false, imgRef, classes = ""}) => {
   return (
     <div className={`profile-image ${isSelected ? "selected" : ""} ${classes}`} ref={imgRef}>
-      <img src={image.src} alt={image.alt} />
+      <img className="image" src={image.src} alt={image.alt} />
     </div>
   )
 }

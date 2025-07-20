@@ -31,8 +31,18 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 0.15em;
+
+    &.with-rotation {
+      > :where(.top, .middle, .bottom ) {
+        > .icon {
+          svg {
+            rotate: -30deg;
+          }
+        }
+      }
+    }
     
-    > :where(.top, .middle, .bottom ){
+    > :where(.top, .middle, .bottom ) {
       position: relative;
       display: flex;
       gap: 1em;
@@ -44,8 +54,7 @@
           opacity: 0.15;
     
           > svg {
-            rotate: -30deg;
-            --icon-size: 1.5em;
+            --icon-size: 1.4em;
           }
         }
     }

@@ -4,16 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  scroll-snap-align: start;
   
   position: relative;
 
   padding-top: var(--header-height);
   padding-bottom: var(--nav-height);
 
-  // height: calc(100vh - var(--header-height));
-  height: 100vh;
+  height: 100dvh;
 
   &.show-info {
     > .user-card {
@@ -79,6 +76,15 @@
       > .bottom {
         pointer-events: none;
         background: linear-gradient(0deg, #000000D0, transparent);
+
+        > .hint {
+          width: 100%;
+          text-align: center;
+          // text-wrap: balance;
+          opacity: 0.3;
+          font-size: var(--person-text-font-size);
+          padding: 0.5rem 2rem;
+        }
       }
     }
   }

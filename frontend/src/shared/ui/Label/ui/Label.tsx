@@ -2,16 +2,17 @@ import type { FC } from "react";
 import "./Label.scss";
 
 type LabelProps = {
-  title: string;
+  text: string;
+  hasLines?: boolean;
 }
 
-export const Label: FC<LabelProps> = ({ title }) => {
+export const Label: FC<LabelProps> = ({ text, hasLines = true }) => {
   return (
     <>
       <div className="label-container">
-        <hr />
-        {title}
-        <hr />
+        {hasLines && <hr />}
+        {text}
+        {hasLines && <hr />}
       </div>
     </>
   );

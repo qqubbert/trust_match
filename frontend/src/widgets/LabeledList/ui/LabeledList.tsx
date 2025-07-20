@@ -6,14 +6,23 @@ import { Label } from "@shared/ui/Label";
 
 type LabeledListProps = {
   title?: string;
-  children: ReactNode,
+  hint?: string;
+  children: ReactNode;
+  hasLabel?: boolean;
+  hasHint?: boolean;
+  classes?: string;
 }
 
-export const LabeledList: FC<LabeledListProps> = ({children, title = "" }) => {
+export const LabeledList: FC<LabeledListProps> = ({classes = "", children, title = "", hint = "", hasLabel = true, hasHint = false }) => {
   return (
     <>
-      <div className="labeled-list">
-        <Label title={title}/>
+      <div className={`labeled-list ${classes}`}>
+        {hasLabel && 
+          <Label text={title} hasLines={true}/>
+        }
+        {hasHint &&
+          <Label text={hint} hasLines={false}/>
+        }
         {children}
       </div>
     </>

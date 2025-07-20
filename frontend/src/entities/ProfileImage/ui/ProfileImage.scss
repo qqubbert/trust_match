@@ -1,4 +1,16 @@
 * {
+  &.profile-image-wrapper {
+    flex: 0 0 auto;
+    // padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.3s ease-in-out;
+
+    &.selected {
+      filter: brightness(1);
+    }
+  }
 
   &.own {
     .profile-image {
@@ -30,7 +42,7 @@
       }
     }
 
-    > img {
+    > .image {
       display: block;
       aspect-ratio: 9/16;
       // width: 100%;

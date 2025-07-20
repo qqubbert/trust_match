@@ -28,8 +28,7 @@ body {
   max-width: 100%;
   height: 100dvh;
 
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
 }
 
 #root {
@@ -41,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  overflow: visible;
+  overflow: hidden;
 }
 
 svg {
@@ -63,12 +62,24 @@ button {
   flex: 1;
   
   // padding: 0em 1em 4rem 1em;
-  padding-bottom: 4rem;
+  padding-bottom: calc(var(--nav-height));
   padding-top: var(--header-height);
 
+  overflow-y: auto;
   overflow-x: hidden;
-  overflow-y: visible;
 
   scroll-snap-type: y mandatory;
 
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+div.small-hor-padding {
+  padding: 0 1rem;
 }

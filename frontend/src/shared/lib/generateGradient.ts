@@ -8,7 +8,7 @@ export const generateGradientBackground = (
   return gradientConfig
     .map(
       ({ color, xPos, yPos }) =>
-        `radial-gradient(circle at ${String(yPos)} ${String(xPos)}, ${String(color)}, transparent)`
+        `radial-gradient(circle at ${String(xPos)} ${String(yPos)}, ${String(color)}, transparent)`
     )
     .join(", ");
 };

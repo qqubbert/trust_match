@@ -9,12 +9,14 @@ type ProfileImagesProps = {
   images: ImageType[];
   isOwn: boolean;
   isVisible: boolean;
+  isFullSize: boolean;
 };
 
 export const ProfileImages: FC<ProfileImagesProps> = ({
   images,
   isOwn = false,
   isVisible = false,
+  isFullSize = true,
 }) => {
   const [selected, setSelected] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +44,7 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
 
   return (
     <div
-      className={`profile-images-with-btns ${isOwn ? "own" : ""} ${
+      className={`profile-images-with-btns ${isOwn ? "own" : ""} ${!isFullSize ? "not-full-size" : ""} ${
         isVisible ? "visible" : ""
       }`}
     >
@@ -62,12 +64,15 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
       </button>
       <div className={`profile-images `} ref={containerRef}>
         <div className="imgs-container">
+          {isOwn &&
           <div className={`profile-image transparent`}>
-            <img src={""} alt={""} />
+            <div className="image" />
           </div>
+          }
           {images.map((img, i) => (
             <ProfileImage
-              classes={"profile-image-wrapper "}
+              key={`img-${i}`}
+              classes={"profile-image-wrapper snap-center"}
               image={img}
               isSelected={i === selected}
               imgRef={(el) => {
@@ -75,9 +80,11 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
               }}
             />
           ))}
+          {isOwn &&
           <div className={`profile-image transparent`}>
-            <img src={""} alt={""} />
+            <div className="image" />
           </div>
+          }
         </div>
       </div>
     </div>

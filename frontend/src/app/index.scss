@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 html {
+  --base-bg-bright-color: #ffffff;
+  --base-bg-bright: var(--base-bg-bright-color);
   --base-bg-color: #F3F3F3;
   --base-bg: var(--base-bg-color);
   
@@ -11,6 +13,8 @@ html {
 
   --text-dark-color: #242424;
   --text-bright-color: #F3F3F3;
+  --text-pale-dark-color: #24242420;
+  --text-pale-bright-color: #F3F3F320;
   --text-color: var(--text-dark-color);
 
   --header-font-size: 20px;
@@ -29,7 +33,7 @@ html {
   --person-name-font-weight: 900;
   --person-text-font-size: 14px;
   --person-text-font-weight: 500;
-  --person-info-font-size: 12px;
+  // --person-info-font-size: 12px;
   
   --tag-font-size: 16px;
   --tag-height: 45px;
@@ -52,6 +56,8 @@ html {
 
   --hr-size: 1px;
   --hr-color: var(--text-color);
+  --hr-pale-bright-color: var(--text-pale-bright-color);
+  --hr-pale-dark-color: var(--text-pale-dark-color);
 
   --base-border-color: #1b1b1b79;
   --base-border: var(--base-border-color) 1px solid;
@@ -61,6 +67,13 @@ html {
 
   --base-gradient-color-1:  #1b1b1bd2;
   --base-gradient-color-2: #1b1b1b00;
+
+  --notification-circle-size: 18px;
+  --notification-circle-color: #912020;
+  --notification-count-font-size: 10px;
+
+  --chat-preview-size: 11px;
+  --chat-title-size: 20px;
 }
 
 html[data-theme='dark'] {

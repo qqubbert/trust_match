@@ -1,0 +1,12 @@
+.overflowing-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+
+  > .overflowing-list__overflow {
+    width: 100%;
+    text-align: center;
+    font-size: var(--person-text-font-size);
+  }
+}
