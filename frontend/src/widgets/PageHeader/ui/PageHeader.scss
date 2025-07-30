@@ -15,9 +15,7 @@
 
   background: linear-gradient(180deg, var(--base-gradient-color-1), var(--base-gradient-color-2));
   
-  font-size: calc(var(--header-font-size));
-  color: var(--header-text-color);
-
+  
   > section {
     display: flex;
     flex: 1;
@@ -25,14 +23,21 @@
     padding: 0.5em 0.8em;
     gap: 0.5rem;
     
+    
     &.info {
       justify-content: left;
+      
+      > span {
+        color: var(--header-text-color);
+        font-size: calc(var(--header-font-size));
+      }
 
       > .back-btn {
         background-color: transparent;
 
         > svg {
           --icon-size: 24px;
+          --icons-color: var(--header-icons-color);
         }
       }
 

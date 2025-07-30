@@ -7,7 +7,7 @@ import Menu from "@icons/Menu/DotsMenu.svg?react";
 
 import Back from '@icons/Arrows/ArrowLeft.svg?react';
 
-import { allPageLinks } from "@shared/config/pageLinks";
+// import { allPageLinks } from "@shared/config/pageLinks";
 
 type PageHeaderProps = {
   title: string;

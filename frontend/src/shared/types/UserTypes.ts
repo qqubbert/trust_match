@@ -3,7 +3,7 @@ import type { TagType } from "./TagType"
 
 export type PersonInfoType = {
   name: string;
-  description?: string;
+  description: string;
 };
 
 export type UserType = {

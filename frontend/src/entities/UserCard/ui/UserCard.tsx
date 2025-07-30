@@ -1,4 +1,4 @@
-import { useState, type FC } from "react";
+import { useRef, useState, type FC } from "react";
 import type { UserType } from "@shared/types/UserTypes";
 
 import "./UserCard.scss";
@@ -9,6 +9,7 @@ import { TagCard } from "@entities/TagCard";
 import { CustomInput } from "@shared/ui/Input";
 import { PersonInfo } from "@widgets/PersonInfo";
 import { OverflowingList } from "@widgets/OverflowingList";
+import { ClosingList } from "@widgets/ClosingList";
 
 import { useLongPress } from "@shared/lib/useLongPress";
 
@@ -20,6 +21,8 @@ type CandidateCardProps = {
 export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
   const [isInfoHidden, setIsInfoHidden] = useState(false);
 
+  const msgInputRef = useRef(null);
+
   const longPressRef = useLongPress(
     () => setIsInfoHidden(true),
     () => setIsInfoHidden(false),
@@ -28,7 +31,7 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
 
   return (
     <div
-      className={`user-card-container ${!isInfoHidden ? "show-info" : ""} ${classes}`}
+      className={`user-card-container ${!isInfoHidden ? "show-info" : ""} ${classes} max-width`}
       ref={longPressRef}
     >
       <div className="user-card">
@@ -41,16 +44,18 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
         />
         <div className="user-info">
           <div className="top">
-            <LabeledList title={`Общие интересы`}>
-              {user.tags && user.tags.length > 0 ? (
-                <OverflowingList renderItem={(tag)=><TagCard tagData={tag}/>} items={user.tags} maxCount={3} overflowText={["общий интерес", 'общих интереса', 'общих интересов']}/>
-              ) : (
-                <></>
-              )}
-            </LabeledList>
+            <ClosingList title="Общее">
+              <LabeledList title={`Общие интересы`}>
+                {user.tags && user.tags.length > 0 ? (
+                  <OverflowingList renderItem={(tag)=><TagCard tagData={tag}/>} items={user.tags} maxCount={3} overflowText={["общий интерес", 'общих интереса', 'общих интересов']}/>
+                ) : (
+                  <></>
+                )}
+              </LabeledList>
+            </ClosingList>
           </div>
           <div className="bottom">
-            <PersonInfo person={user.person} />
+            <PersonInfo person={user.person} hasEditBtn={false} isSelf={false}/>
             <p className="hint">
               Нажмите, чтобы посмотреть подробную информацию
             </p>
@@ -60,6 +65,8 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
       <CustomInput
         inputLabel="Напишите, если понравилась анкета!"
         placeholder="Введите сообщение..."
+        hasLikeBtn={true}
+        ref={msgInputRef}
       />
     </div>
   );

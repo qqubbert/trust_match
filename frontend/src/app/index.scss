@@ -42,10 +42,12 @@ html {
 
   --input-label-font-size: 11px;
   --input-font-size: 14px;
-  --input-bg-color: #D9D9D9;
-  --input-bg: var(--input-bg-color);
+  --input-bg-bright-color: #e6e6e6;
+  --input-bg-dark-color: #303030;
+  --input-bg: var(--input-bg-bright-color);
   --input-button-bg-color: #242424;
   --input-text-color: var(--text-dark-color);
+  --input-icons-color: var(--icons-dark-color);
 
   --base-font-size: 20px;
   --base-headline-font-size: 48px;
@@ -55,9 +57,9 @@ html {
   --page-button-smaller-font-size: 18px;
 
   --hr-size: 1px;
-  --hr-color: var(--text-color);
   --hr-pale-bright-color: var(--text-pale-bright-color);
   --hr-pale-dark-color: var(--text-pale-dark-color);
+  --hr-color: var(--text-color);
 
   --base-border-color: #1b1b1b79;
   --base-border: var(--base-border-color) 1px solid;
@@ -74,14 +76,33 @@ html {
 
   --chat-preview-size: 11px;
   --chat-title-size: 20px;
+
+  --chat-self-message-color: #2F835C; 
+  --chat-message-color: #2F835C; 
+  --chat-self-message-bg: var(--chat-self-message-color); 
+  --chat-message-bg: var(--chat-message-color); 
+  --chat-self-message-text-color: var(--text-bright-color);
+  --chat-message-text-color: var(--text-bright-color);
+  --chat-message-font-size: 12px;
+  --chat-message-font-weight: 400;
+
+  --bounce-animation: cubic-bezier(1,-0.5,0,1.5);
 }
 
 html[data-theme='dark'] {
   --base-bg-color: #1B1B1B;
+  --base-bg-bright-color: #303030;
 
   --text-color: var(--text-bright-color);
+  --icons-color: var(--icons-bright-color);
 
-  --hr-color: #F3F3F3;
+  --input-bg: var(--input-bg-dark-color);
+  --input-text-color: var(--text-bright-color);
+  --input-icons-color: var(--icons-bright-color);
+
+  // --hr-color: #F3F3F3;
+  --hr-pale-bright-color: var(--text-pale-bright-color);
+  --hr-pale-dark-color: var(--hr-pale-bright-color);
 
   --header-text-color: var(--text-bright-color);
   --header-icons-color: var(--icons-bright-color);

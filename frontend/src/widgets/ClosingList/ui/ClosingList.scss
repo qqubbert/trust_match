@@ -1,0 +1,50 @@
+.closing-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // justify-content: center;
+
+  max-height: 36px;
+  // height: 36px;
+  flex: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &.opened {
+    max-height: 500px;
+    height: fit-content;
+    flex: 1;
+
+    > .title-container {
+      opacity: 0.25;
+
+      > svg {
+        rotate: -180deg;
+      }
+    }
+  }
+  
+  > .title-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+
+    opacity: 0.5;
+
+    transition: all 0.25s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    > svg {
+      transition: all 0.6s var(--bounce-animation);
+      --icons-color: var(--icons-bright-color);
+    }
+  }
+}

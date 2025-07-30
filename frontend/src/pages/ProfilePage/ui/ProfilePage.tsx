@@ -29,11 +29,11 @@ export function ProfilePage() {
   }
 
   const ImgsData = [
-    {src: '/images/usersPreview/boys/sasha/sasha1.jpg', alt: 'Санёк'},
-    {src: '/images/usersPreview/boys/sasha/sasha2.jpg', alt: 'Санёк'},
-    {src: '/images/usersPreview/boys/sasha/sasha3.jpg', alt: 'Санёк'},
     {src: '/images/usersPreview/boys/sasha/sasha4.jpg', alt: 'Санёк'},
     {src: '/images/usersPreview/boys/sasha/sasha5.jpg', alt: 'Санёк'},
+    {src: '/images/usersPreview/boys/sasha/sasha3.jpg', alt: 'Санёк'},
+    {src: '/images/usersPreview/boys/sasha/sasha2.jpg', alt: 'Санёк'},
+    {src: '/images/usersPreview/boys/sasha/sasha1.jpg', alt: 'Санёк'},
     {src: '/images/usersPreview/boys/sasha/sasha6.jpg', alt: 'Санёк'},
   ]
 
@@ -42,8 +42,8 @@ export function ProfilePage() {
       <PageHeader title="Профиль" />
       <div className="page profile">
         <ProfileImages images={ImgsData} isOwn={true} isVisible={true} isFullSize={false}/>
-        <PersonInfo person={PersonData}/>
-        <LabeledList title="Интересы">
+        <PersonInfo person={PersonData} classes="" hasEditBtn={true} isSelf={true}/>
+        <LabeledList title="Интересы" classes="">
           {TagData.map((tag, i) => {
             return (
               <TagCard tagData={tag} key={`tag-${i}`} />

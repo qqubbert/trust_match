@@ -72,6 +72,11 @@ button {
 
 }
 
+.max-width {
+  max-width: 500px;
+  margin: auto;
+}
+
 .snap-start {
   scroll-snap-align: start;
 }
@@ -82,4 +87,8 @@ button {
 
 div.small-hor-padding {
   padding: 0 1rem;
+}
+
+img {
+  object-fit: cover;
 }

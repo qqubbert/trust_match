@@ -25,7 +25,7 @@ export const navPageLinks: Record<string, LinkType> = {
   chats: { link: ()=> `/chats`, path: 'chats', icon: Chats, title: 'Чаты', element: <ChatsListPage /> },
   games: { link: ()=> `/games`, path: 'games', icon: Games, title: 'Игры', element: <GamesListPages /> },
   candidates: { link: ()=> `/`, path: '', icon: Candidates, title: 'Кандидаты', element: <CandidatesPage /> },
-  mail: { link: ()=> `/mail`, path: 'mail', icon: Mail, title: 'Советы', element: <MailPage /> },
+  mail: { link: ()=> `/mail`, path: 'mail', icon: Mail, title: 'Уведомления', element: <MailPage /> },
   profile: { link: ()=> `/profile`, path: 'profile', icon: Profile, title: 'Профиль', element: <ProfilePage /> },
 };
 

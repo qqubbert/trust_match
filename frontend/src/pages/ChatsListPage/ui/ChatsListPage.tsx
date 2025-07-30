@@ -8,8 +8,8 @@ export function ChatsListPage() {
   const chatsData = [
     {
       id: 1,
-      chatImage: '/images/usersPreview/girls/dasha/dasha3.jpg',
-      chatTitle: 'Даша',
+      chatImage: '/images/usersPreview/girls/girl2/girl2_1.jpg',
+      chatTitle: 'Маша',
       lastMessage: 'Как прошёл твоё день?',
       isChecked: false,
       isImageVisible: true,

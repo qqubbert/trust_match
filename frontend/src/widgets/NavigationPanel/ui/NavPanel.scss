@@ -13,6 +13,8 @@
 
   font-size: var(--nav-font-size);
 
+  pointer-events: none;
+
   > nav {
     padding: 1em;
 

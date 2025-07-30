@@ -1,4 +1,6 @@
 .nav-item {
+  user-select: none;
+
   position: relative;
 
   display: flex;
@@ -15,7 +17,9 @@
 
   opacity: 0.3;
 
-  transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.25s;
+
+  pointer-events: all;
 
   --text-color: var(--nav-text-color);
   --icons-color: var(--nav-icons-color);
@@ -33,10 +37,12 @@
   }
 
   &:hover {
-    --icons-color: var(--nav-icons-color);
-    --text-color: var(--nav-text-color);
+    // --icons-color: var(--nav-icons-color);
+    // --text-color: var(--nav-text-color);
+    --icons-color: var(--nav-selected-icons-color);
+    --text-color: var(--nav-selected-text-color);
 
-    opacity: 0.6;
+    opacity: 0.3;
   }
 
   &.selected {

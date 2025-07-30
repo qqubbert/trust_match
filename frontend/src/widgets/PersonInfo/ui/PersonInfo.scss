@@ -5,6 +5,42 @@
   width: 100%;
   padding: 0rem 0.8rem;
 
+  &.self {
+    > p {
+      overflow: visible;
+      display: block;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+  &.editing {
+    > .name-container {
+      > .name-and-btn {
+        // outline: var(--hr-color) 1px solid;
+        box-shadow: var(--base-shadow);
+        background-color: var(--input-bg);
+        > * {
+          > svg {
+            --icons-color: var(--input-icons-color);
+          }
+        }
+        > h1 {
+          color: var(--input-text-color);
+        }
+      }
+    }
+
+    > p {
+      // text-decoration: underline;
+      box-shadow: var(--base-shadow);
+      color: var(--input-text-color);
+      background-color: var(--input-bg);
+      > svg {
+        --icons-color: var(--input-icons-color);
+      }
+    }
+  }
+
   > hr {
     height: var(--hr-size);
     border: var(--hr-size) var(--hr-color) solid;
@@ -27,6 +63,25 @@
 
     display: -webkit-box;
     display: -moz-box;
+
+    border-radius: 0.75rem;
+
+    transition: all 0.3s ease-in-out;
+
+    word-break: normal;
+
+    max-width: 100%;
+    overflow: hidden;
+
+    white-space: pre-line;
+
+    &.editable.empty:empty::before {
+      content: attr(data-placeholder);
+      color: var(--text-color);
+      opacity: 0.15;
+      pointer-events: none;
+      display: block;
+    }
   }
 
   > .name-container {
@@ -34,16 +89,80 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    height: 60px;
 
     > .name-and-btn {
       display: flex;
       align-items: center;
-      justify-content: left;
+      justify-content: space-between;
       gap: 0.5rem;
+      flex: 1;
+      border-radius: 0.75rem;
+      outline: transparent 1px solid;
+      transition: all 0.3s ease-in-out;
+      padding: 0 0.5rem;
+      max-width: 100%;
+      overflow: hidden;
+      height: 100%;
+
+      > .edit-btn {
+        background-color: transparent;
+        opacity: 0.5;
+
+        cursor: pointer;
+
+        width: 30px;
+        height: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        > svg {
+          --icon-size: 10px;
+
+          opacity: 0;
+
+          pointer-events: none;
+
+          transition: all 0.3s var(--bounce-animation);
+
+          &.visible {
+            --icon-size: 30px;
+
+            opacity: 1;
+
+            pointer-events: all;
+
+            position: absolute;
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
 
       > h1 {
+        height: 100%;
+        max-height: 100%;
         font-weight: var(--person-name-font-weight);
         font-size: var(--person-name-font-size);
+
+        flex: 1;
+        max-width: calc(100% - 0.5rem - 30px);
+
+        overflow-x: scroll;
+
+        &.editable.empty:empty::before {
+          content: attr(data-placeholder);
+          color: var(--text-color);
+          opacity: 0.15;
+          pointer-events: none;
+          display: block;
+        }
       }
     }
   }

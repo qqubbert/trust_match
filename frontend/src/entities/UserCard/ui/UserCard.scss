@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   
   position: relative;
 
@@ -34,7 +34,7 @@
 
     position: relative;
     
-    height: 75dvh;
+    height: 80dvh;
     
     aspect-ratio: 9 / 16;
     overflow: hidden;
@@ -46,6 +46,8 @@
 
     pointer-events: none;
     border-radius: 1rem;
+
+    // border: var(--hr-size) var(--hr-pale-bright-color) solid;
 
     > .user-info {
       // padding: 0.5rem;
