@@ -47,6 +47,8 @@
     pointer-events: none;
     border-radius: 1rem;
 
+    box-shadow: var(--base-shadow);
+
     // border: var(--hr-size) var(--hr-pale-bright-color) solid;
 
     > .user-info {

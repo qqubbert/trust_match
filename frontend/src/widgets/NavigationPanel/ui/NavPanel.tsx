@@ -23,6 +23,7 @@ export const NavPanel: FC<NavigationPanelProps> = ({ className = "" }) => {
 
   return (
     <header className={`${className} nav-panel `}>
+      <div className="nav-bg"></div>
       <nav>
         {navPageLinksArray.map((pageLink, i) => {
           return (

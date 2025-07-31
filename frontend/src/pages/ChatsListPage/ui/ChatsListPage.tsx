@@ -32,9 +32,9 @@ export function ChatsListPage() {
       <div className="page">
         <LabeledList hasLabel={false} classes="small-hor-padding">
           {chatsData && chatsData.length > 0 ? (
-            chatsData.map((chat)=>{
+            chatsData.map((chat, i)=>{
               return (
-                <ChatCard chatData={chat}/>
+                <ChatCard key={`chat-${i}`} chatData={chat}/>
               )
             })
           ) : (<></>)}

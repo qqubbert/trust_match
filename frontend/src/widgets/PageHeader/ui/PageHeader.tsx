@@ -28,6 +28,7 @@ export const PageHeader: FC<PageHeaderProps> = ({
 }) => {
   return (
     <header className="page-header">
+      <div className="header-bg"></div>
       <section className="info">
         {hasBackBtn && <Link to={backLink} className="back-btn"><Back /></Link>}
         {infoLeft}

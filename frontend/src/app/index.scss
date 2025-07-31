@@ -21,13 +21,15 @@ html {
   --header-text-color: var(--text-dark-color);
   --header-icons-color: var(--icons-dark-color);
   --header-height: 50px;
+  --header-bg-height: calc(var(--header-height) + 15px);
 
   --nav-font-size: 10px;
-  --nav-icons-color: var(--text-dark-color);
-  --nav-text-color: var(--text-dark-color);
+  --nav-icons-color: var(--icons-bright-color);
+  --nav-text-color: var(--text-bright-color);
   --nav-selected-icons-color: var(--text-bright-color);
   --nav-selected-text-color: var(--text-bright-color);
   --nav-height: 70px;
+  --nav-bg-height: calc(var(--nav-height) + 15px);
 
   --person-name-font-size: 48px;
   --person-name-font-weight: 900;
@@ -87,6 +89,17 @@ html {
   --chat-message-font-weight: 400;
 
   --bounce-animation: cubic-bezier(1,-0.5,0,1.5);
+
+  --game-card-img-diff: 4px;
+  --game-card-img-size: calc(var(--game-card-img-hover-size) - var(--game-card-img-diff));
+  --game-card-img-hover-size: var(--game-card-width);
+  --game-card-width: 100px;
+  --game-card-height: 150px;
+  --game-card-font-size: 16px;
+
+  --grid-cell-col-size: 150px;
+  --grid-cell-row-size: 150px;
+  --grid-gap-size: 0.5rem;
 }
 
 html[data-theme='dark'] {

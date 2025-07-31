@@ -19,6 +19,8 @@
 
   transition: all 0.15s ease-in-out;
 
+  box-shadow: var(--base-shadow);
+
   &:hover {
     background: var(--base-bg-bright);
   }
