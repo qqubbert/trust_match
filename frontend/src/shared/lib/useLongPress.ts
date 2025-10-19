@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from "react";
 
 export const useLongPress = (
   onLongPress: () => void,
@@ -8,6 +8,7 @@ export const useLongPress = (
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const targetRef = useRef<HTMLElement | null>(null);
   const movedRef = useRef(false);
+  const isLongPressTriggered = useRef(false);
 
   const clear = () => {
     if (timerRef.current) {
@@ -19,8 +20,10 @@ export const useLongPress = (
   const handlePressStart = useCallback(() => {
     clear();
     movedRef.current = false;
+    isLongPressTriggered.current = false;
     timerRef.current = setTimeout(() => {
       if (!movedRef.current) {
+        isLongPressTriggered.current = true;
         onLongPress();
       }
     }, delay);
@@ -33,11 +36,14 @@ export const useLongPress = (
 
   const handlePressEnd = useCallback(() => {
     clear();
-    onRelease();
+    if (isLongPressTriggered.current) {
+      onRelease();
+    }
   }, [onRelease]);
 
   const register = useCallback((node: HTMLElement | null) => {
     if (targetRef.current) {
+      // remove listeners...
       targetRef.current.removeEventListener('mousedown', handlePressStart);
       targetRef.current.removeEventListener('mouseup', handlePressEnd);
       targetRef.current.removeEventListener('mouseleave', handlePressEnd);
@@ -66,5 +72,8 @@ export const useLongPress = (
 
   useEffect(() => () => clear(), []);
 
-  return register;
+  return {
+    register,
+    isLongPressTriggered,
+  };
 };

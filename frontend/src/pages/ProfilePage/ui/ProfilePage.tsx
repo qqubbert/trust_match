@@ -21,6 +21,7 @@ export function ProfilePage() {
     tags.content.anime,
     tags.sport.basketball,
     tags.sport.football,
+    tags.lifestyle.alcohol,
   ];
 
   const PersonData = {

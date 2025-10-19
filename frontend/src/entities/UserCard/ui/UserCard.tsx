@@ -23,7 +23,7 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
 
   const msgInputRef = useRef(null);
 
-  const longPressRef = useLongPress(
+  const { register: longPressRef } = useLongPress(
     () => setIsInfoHidden(true),
     () => setIsInfoHidden(false),
     250

@@ -50,6 +50,7 @@ html {
   --input-button-bg-color: #242424;
   --input-text-color: var(--text-dark-color);
   --input-icons-color: var(--icons-dark-color);
+  --input-height: 65px;
 
   --base-font-size: 20px;
   --base-headline-font-size: 48px;
@@ -90,7 +91,7 @@ html {
 
   --bounce-animation: cubic-bezier(1,-0.5,0,1.5);
 
-  --game-card-img-diff: 4px;
+  --game-card-img-diff: 0px;
   --game-card-img-size: calc(var(--game-card-img-hover-size) - var(--game-card-img-diff));
   --game-card-img-hover-size: var(--game-card-width);
   --game-card-width: 100px;
@@ -99,7 +100,7 @@ html {
 
   --grid-cell-col-size: 150px;
   --grid-cell-row-size: 150px;
-  --grid-gap-size: 0.5rem;
+  --grid-gap-size: 0.25rem;
 }
 
 html[data-theme='dark'] {

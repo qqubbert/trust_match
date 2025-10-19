@@ -44,9 +44,9 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
 
   return (
     <div
-      className={`profile-images-with-btns ${isOwn ? "own" : ""} ${!isFullSize ? "not-full-size" : ""} ${
-        isVisible ? "visible" : ""
-      }`}
+      className={`profile-images-with-btns ${isOwn ? "own" : ""} ${
+        !isFullSize ? "not-full-size" : ""
+      } ${isVisible ? "visible" : ""}`}
     >
       <button
         className={`arrow prev ${selected == 0 ? "transparent" : ""}`}
@@ -56,7 +56,9 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
         <Left />
       </button>
       <button
-        className={`arrow next ${selected == images.length - 1 ? "transparent" : ""}`}
+        className={`arrow next ${
+          selected == images.length - 1 ? "transparent" : ""
+        }`}
         disabled={selected == images.length - 1}
         onClick={() => changeImg(true)}
       >
@@ -64,11 +66,13 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
       </button>
       <div className={`profile-images `} ref={containerRef}>
         <div className="imgs-container">
-          {isOwn &&
-          <div className={`profile-image transparent`}>
-            <div className="image" />
-          </div>
-          }
+          {isOwn && (
+            <>
+              <div className={`profile-image transparent`}>
+                <div className="image" />
+              </div>
+            </>
+          )}
           {images.map((img, i) => (
             <ProfileImage
               key={`img-${i}`}
@@ -80,11 +84,11 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
               }}
             />
           ))}
-          {isOwn &&
-          <div className={`profile-image transparent`}>
-            <div className="image" />
-          </div>
-          }
+          {isOwn && (
+            <div className={`profile-image transparent`}>
+              <div className="image" />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -94,7 +94,7 @@ export const SingleChatPage = () => {
           <ScrollAnchor behavior="instant"/>
           </div>
         </div>
-        <CustomInput />
+        <CustomInput classes="chat-input" hasMicBtn={true} hasVideoBtn={true} hasLikeBtn={false}/>
       </div>
     </>
   );
