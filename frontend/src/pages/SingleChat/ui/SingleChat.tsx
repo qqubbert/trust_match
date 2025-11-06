@@ -1,5 +1,7 @@
 import "./SingleChat.css";
 
+import { useEffect, useContext } from "react";
+
 import { CustomInput } from "@shared/ui/Input";
 import { PageHeader } from "@widgets/PageHeader";
 import { ChatMessage } from "@entities/ChatMessage";
@@ -7,8 +9,17 @@ import { ScrollAnchor } from "@shared/ui/ScrollAnchor/ui/ScrollAnchor";
 
 import { allPageLinks } from "@shared/config/pageLinks";
 
+import { HideNavContext } from "@features/HideNavigationContext/";
+
 export const SingleChatPage = () => {
   const selfUserId = 1;
+
+  const { setShowNav } = useContext(HideNavContext);
+
+  useEffect(() => {
+    setShowNav(false);
+    return () => setShowNav(true);
+  }, [setShowNav]);
 
   const messages = [
     { userId: 1, textMessage: "Привет" },

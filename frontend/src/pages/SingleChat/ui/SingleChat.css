@@ -8,7 +8,7 @@
   > .chat-input {
     position: absolute;
 
-    bottom: var(--nav-height);
+    bottom: 5px;
   }
 
   > .messages-container {

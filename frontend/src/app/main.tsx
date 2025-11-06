@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import { HideNavProvider } from "@features/HideNavigationContext/";
+
 import App from "./App.tsx";
 
 import { allPageLinksArray } from "@shared/config/pageLinks.tsx";
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HideNavProvider>
+      <RouterProvider router={router} />
+    </HideNavProvider>
   </StrictMode>,
 );
