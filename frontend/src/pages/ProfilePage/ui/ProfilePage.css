@@ -1,0 +1,13 @@
+.page.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  /*> .person-info {*/
+  /*max-width: 800px;*/
+  /*}*/
+
+  /*> .labeled-list {*/
+  /*max-width: 800px;*/
+  /*}*/
+}

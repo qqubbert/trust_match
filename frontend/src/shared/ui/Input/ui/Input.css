@@ -8,7 +8,7 @@
 
   .input-label {
     font-size: var(--input-label-font-size);
-    // flex: 1;
+    /*flex: 1;*/
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
 
@@ -27,7 +27,7 @@
   .input-and-btn {
     display: flex;
 
-    // overflow: hidden;
+    /*overflow: hidden;*/
 
     background: var(--input-bg);
 
@@ -44,7 +44,7 @@
       display: flex;
 
       gap: 0.5rem;
-      
+
       padding-left: 0.5rem;
     }
 
@@ -79,12 +79,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       --icons-color: var(--icons-bright-color);
 
       > svg {
         position: absolute;
-        
+
         --icon-size: 10px;
 
         opacity: 0;

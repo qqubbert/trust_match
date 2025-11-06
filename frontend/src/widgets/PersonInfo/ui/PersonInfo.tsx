@@ -1,7 +1,7 @@
 import { type FC, useState } from "react";
 import type { PersonInfoType } from "@shared/types/UserTypes";
 
-import "./PersonInfo.scss";
+import "./PersonInfo.css";
 
 import Edit from "@icons/Edit/Edit.svg?react";
 import Cross from "@icons/Cross/Cross.svg?react";

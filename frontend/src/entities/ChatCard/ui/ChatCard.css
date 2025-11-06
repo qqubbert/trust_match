@@ -6,13 +6,13 @@
   justify-content: space-between;
 
   gap: 0.5rem;
-  
+
   padding: 0.5rem;
 
   cursor: pointer;
 
   border-radius: 0.75rem;
-  
+
   border: var(--hr-size) var(--hr-pale-dark-color) solid;
 
   background: var(--base-bg);
@@ -25,13 +25,13 @@
     background: var(--base-bg-bright);
   }
 
-  // &:not(:last-of-type) {
-  //   border-bottom: none;
-  // }
+  /*&:not(:last-of-type) {
+    border-bottom: none;
+  }*/
 
   > img {
     border-radius: 50%;
-    
+
     width: 2rem;
     height: 2rem;
   }

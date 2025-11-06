@@ -29,7 +29,7 @@
   }
 
   > svg {
-    // --icon-size: 36px;
+    /*--icon-size: 36px;*/
 
     > path {
       transition: all ease-in-out 0.1s;
@@ -37,8 +37,8 @@
   }
 
   &:hover {
-    // --icons-color: var(--nav-icons-color);
-    // --text-color: var(--nav-text-color);
+    /*--icons-color: var(--nav-icons-color);*/
+    /*--text-color: var(--nav-text-color);*/
     --icons-color: var(--nav-selected-icons-color);
     --text-color: var(--nav-selected-text-color);
 

@@ -1,23 +1,20 @@
-import { type FC, type ReactNode, useState } from 'react';
+import { type FC, type ReactNode, useState } from "react";
 
-import Arrow from '@icons/Arrows/ArrowBottom.svg?react';
+import Arrow from "@icons/Arrows/ArrowBottom.svg?react";
 
-import './ClosingList.scss';
+import "./ClosingList.css";
 
 type ClosingListProps = {
   children: ReactNode;
   title: string;
-}
+};
 
-export const ClosingList: FC<ClosingListProps> = ({
-  children,
-  title = "",
-}) => {
+export const ClosingList: FC<ClosingListProps> = ({ children, title = "" }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const titleClickHandler = () => {
-    setIsOpen(prev => !prev);
-  }
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -29,5 +26,5 @@ export const ClosingList: FC<ClosingListProps> = ({
         {children}
       </div>
     </>
-  )
-}
+  );
+};

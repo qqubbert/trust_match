@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 html {
   --base-bg-bright-color: #ffffff;
   --base-bg-bright: var(--base-bg-bright-color);
-  --base-bg-color: #F3F3F3;
+  --base-bg-color: #f3f3f3;
   --base-bg: var(--base-bg-color);
-  
+
   --icons-dark-color: #242424;
-  --icons-bright-color: #F3F3F3;
+  --icons-bright-color: #f3f3f3;
   --icons-color: var(--icons-dark-color);
   --icon-size: 36px;
 
   --text-dark-color: #242424;
-  --text-bright-color: #F3F3F3;
+  --text-bright-color: #f3f3f3;
   --text-pale-dark-color: #24242420;
-  --text-pale-bright-color: #F3F3F320;
+  --text-pale-bright-color: #f3f3f320;
   --text-color: var(--text-dark-color);
 
   --header-font-size: 20px;
@@ -35,12 +35,12 @@ html {
   --person-name-font-weight: 900;
   --person-text-font-size: 14px;
   --person-text-font-weight: 500;
-  // --person-info-font-size: 12px;
-  
+  /*--person-info-font-size: 12px;*/
+
   --tag-font-size: 16px;
   --tag-height: 45px;
   --tag-empty-bg: #221010;
-  --tag-text-color: #F3F3F3;
+  --tag-text-color: #f3f3f3;
 
   --input-label-font-size: 11px;
   --input-font-size: 14px;
@@ -70,7 +70,7 @@ html {
   --base-shadow-color: #1b1b1b31;
   --base-shadow: 0px 2px 4px 1px var(--base-shadow-color);
 
-  --base-gradient-color-1:  #1b1b1bd2;
+  --base-gradient-color-1: #1b1b1bd2;
   --base-gradient-color-2: #1b1b1b00;
 
   --notification-circle-size: 18px;
@@ -80,19 +80,21 @@ html {
   --chat-preview-size: 11px;
   --chat-title-size: 20px;
 
-  --chat-self-message-color: #2F835C; 
-  --chat-message-color: #2F835C; 
-  --chat-self-message-bg: var(--chat-self-message-color); 
-  --chat-message-bg: var(--chat-message-color); 
+  --chat-self-message-color: #2f835c;
+  --chat-message-color: #2f835c;
+  --chat-self-message-bg: var(--chat-self-message-color);
+  --chat-message-bg: var(--chat-message-color);
   --chat-self-message-text-color: var(--text-bright-color);
   --chat-message-text-color: var(--text-bright-color);
   --chat-message-font-size: 12px;
   --chat-message-font-weight: 400;
 
-  --bounce-animation: cubic-bezier(1,-0.5,0,1.5);
+  --bounce-animation: cubic-bezier(1, -0.5, 0, 1.5);
 
   --game-card-img-diff: 0px;
-  --game-card-img-size: calc(var(--game-card-img-hover-size) - var(--game-card-img-diff));
+  --game-card-img-size: calc(
+    var(--game-card-img-hover-size) - var(--game-card-img-diff)
+  );
   --game-card-img-hover-size: var(--game-card-width);
   --game-card-width: 100px;
   --game-card-height: 150px;
@@ -103,8 +105,8 @@ html {
   --grid-gap-size: 0.25rem;
 }
 
-html[data-theme='dark'] {
-  --base-bg-color: #1B1B1B;
+html[data-theme="dark"] {
+  --base-bg-color: #1b1b1b;
   --base-bg-bright-color: #303030;
 
   --text-color: var(--text-bright-color);
@@ -114,7 +116,7 @@ html[data-theme='dark'] {
   --input-text-color: var(--text-bright-color);
   --input-icons-color: var(--icons-bright-color);
 
-  // --hr-color: #F3F3F3;
+  /*--hr-color: #F3F3F3;*/
   --hr-pale-bright-color: var(--text-pale-bright-color);
   --hr-pale-dark-color: var(--hr-pale-bright-color);
 
@@ -122,5 +124,5 @@ html[data-theme='dark'] {
   --header-icons-color: var(--icons-bright-color);
   --nav-icons-color: var(--text-bright-color);
   --nav-text-color: var(--text-bright-color);
-  --base-gradient-color-1:  #1b1b1b;
+  --base-gradient-color-1: #1b1b1b;
 }

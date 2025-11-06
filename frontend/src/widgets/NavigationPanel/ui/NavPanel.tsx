@@ -1,7 +1,7 @@
-import {  type FC } from "react";
+import { type FC } from "react";
 import { useLocation } from "react-router-dom";
 
-import "./NavPanel.scss";
+import "./NavPanel.css";
 
 import { NavItem } from "@entities/NavItem";
 

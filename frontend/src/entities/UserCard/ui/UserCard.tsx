@@ -1,7 +1,7 @@
 import { useRef, useState, type FC } from "react";
 import type { UserType } from "@shared/types/UserTypes";
 
-import "./UserCard.scss";
+import "./UserCard.css";
 
 import { ProfileImages } from "@widgets/ProfileImages";
 import { LabeledList } from "@widgets/LabeledList";
@@ -26,7 +26,7 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
   const { register: longPressRef } = useLongPress(
     () => setIsInfoHidden(true),
     () => setIsInfoHidden(false),
-    250
+    250,
   );
 
   return (
@@ -47,7 +47,16 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
             <ClosingList title="Общее">
               <LabeledList title={`Общие интересы`}>
                 {user.tags && user.tags.length > 0 ? (
-                  <OverflowingList renderItem={(tag)=><TagCard tagData={tag}/>} items={user.tags} maxCount={3} overflowText={["общий интерес", 'общих интереса', 'общих интересов']}/>
+                  <OverflowingList
+                    renderItem={(tag) => <TagCard tagData={tag} />}
+                    items={user.tags}
+                    maxCount={3}
+                    overflowText={[
+                      "общий интерес",
+                      "общих интереса",
+                      "общих интересов",
+                    ]}
+                  />
                 ) : (
                   <></>
                 )}
@@ -55,7 +64,11 @@ export const UserCard: FC<CandidateCardProps> = ({ user, classes = "" }) => {
             </ClosingList>
           </div>
           <div className="bottom">
-            <PersonInfo person={user.person} hasEditBtn={false} isSelf={false}/>
+            <PersonInfo
+              person={user.person}
+              hasEditBtn={false}
+              isSelf={false}
+            />
             <p className="hint">
               Нажмите, чтобы посмотреть подробную информацию
             </p>

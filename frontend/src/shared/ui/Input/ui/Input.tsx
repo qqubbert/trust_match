@@ -5,7 +5,7 @@ import {
   type ReactNode,
 } from "react";
 
-import "./Input.scss";
+import "./Input.css";
 
 import Send from "@icons/Send/Send.svg?react";
 import Like from "@icons/Like/Like.svg?react";
@@ -49,7 +49,7 @@ export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
       hasMicBtn = false,
       hasVideoBtn = false,
     },
-    ref
+    ref,
   ) => {
     const [inputValue, setInputValue] = useState(defaultValue);
 
@@ -105,7 +105,7 @@ export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
           sendVideoFunc();
         }
       },
-      250
+      250,
     );
 
     const sendBtnClickHandle = () => {
@@ -156,5 +156,5 @@ export const CustomInput = forwardRef<HTMLInputElement, InputProps>(
         </div>
       </>
     );
-  }
+  },
 );

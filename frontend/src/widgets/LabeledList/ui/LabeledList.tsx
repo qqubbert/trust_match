@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from "react";
 
-import './LabeledList.scss';
+import "./LabeledList.css";
 
 import { Label } from "@shared/ui/Label";
 
@@ -11,20 +11,23 @@ type LabeledListProps = {
   hasLabel?: boolean;
   hasHint?: boolean;
   classes?: string;
-}
+};
 
-export const LabeledList: FC<LabeledListProps> = ({classes = "", children, title = "", hint = "", hasLabel = true, hasHint = false }) => {
+export const LabeledList: FC<LabeledListProps> = ({
+  classes = "",
+  children,
+  title = "",
+  hint = "",
+  hasLabel = true,
+  hasHint = false,
+}) => {
   return (
     <>
       <div className={`labeled-list ${classes}`}>
-        {hasLabel && 
-          <Label text={title} hasLines={true}/>
-        }
-        {hasHint &&
-          <Label text={hint} hasLines={false}/>
-        }
+        {hasLabel && <Label text={title} hasLines={true} />}
+        {hasHint && <Label text={hint} hasLines={false} />}
         {children}
       </div>
     </>
-  )
-}
+  );
+};

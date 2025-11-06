@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import "./Label.scss";
+import "./Label.css";
 
 type LabelProps = {
   text: string;

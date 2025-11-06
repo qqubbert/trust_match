@@ -6,4 +6,4 @@ export const useScrollToTop = (ref: React.RefObject<HTMLElement | null>) => {
       ref.current.scrollTop = 0;
     }
   }, [ref]);
-}
+};

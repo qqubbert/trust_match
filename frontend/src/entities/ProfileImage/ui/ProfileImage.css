@@ -1,7 +1,7 @@
 * {
   &.profile-image-wrapper {
     flex: 0 0 auto;
-    // padding: 0.25rem;
+    /*padding: 0.25rem;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@
     aspect-ratio: 9 / 16;
     overflow: hidden;
     display: flex;
-    // flex-direction: column;
+    /*flex-direction: column;*/
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-in-out;
@@ -45,13 +45,13 @@
     > .image {
       display: block;
       aspect-ratio: 9/16;
-      // width: 100%;
+      /*width: 100%;*/
       height: 100%;
       object-fit: cover;
       border-radius: 1rem;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-      // transform: scale(0.8);
+      /*transform: scale(0.8);*/
     }
   }
 }

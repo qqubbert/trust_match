@@ -6,4 +6,4 @@ export type ChatType = {
   isChecked: boolean;
   isImageVisible: boolean;
   checkCount: number;
-} 
+};

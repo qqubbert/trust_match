@@ -16,7 +16,7 @@
   &.editing {
     > .name-container {
       > .name-and-btn {
-        // outline: var(--hr-color) 1px solid;
+        /*outline: var(--hr-color) 1px solid;*/
         box-shadow: var(--base-shadow);
         background-color: var(--input-bg);
         > * {
@@ -31,7 +31,7 @@
     }
 
     > p {
-      // text-decoration: underline;
+      /*text-decoration: underline;*/
       box-shadow: var(--base-shadow);
       color: var(--input-text-color);
       background-color: var(--input-bg);

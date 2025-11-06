@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
+
   position: relative;
 
   padding-top: var(--header-height);
@@ -33,9 +33,9 @@
     --hr-color: var(--text-color);
 
     position: relative;
-    
+
     height: 80dvh;
-    
+
     aspect-ratio: 9 / 16;
     overflow: hidden;
 
@@ -49,13 +49,13 @@
 
     box-shadow: var(--base-shadow);
 
-    // border: var(--hr-size) var(--hr-pale-bright-color) solid;
+    /*border: var(--hr-size) var(--hr-pale-bright-color) solid;*/
 
     > .user-info {
-      // padding: 0.5rem;
+      /*padding: 0.5rem;*/
       position: absolute;
       top: 0;
-      
+
       height: 100%;
 
       opacity: 0;
@@ -67,24 +67,24 @@
 
       border-radius: 1rem;
 
-      // backdrop-filter: brightness(0.5);
+      /*backdrop-filter: brightness(0.5);*/
 
       > .top {
         pointer-events: none;
 
         padding: 0.75rem 0;
 
-        background: linear-gradient(180deg, #000000D0, transparent);
+        background: linear-gradient(180deg, #000000d0, transparent);
       }
 
       > .bottom {
         pointer-events: none;
-        background: linear-gradient(0deg, #000000D0, transparent);
+        background: linear-gradient(0deg, #000000d0, transparent);
 
         > .hint {
           width: 100%;
           text-align: center;
-          // text-wrap: balance;
+          /*text-wrap: balance;*/
           opacity: 0.3;
           font-size: var(--person-text-font-size);
           padding: 0.5rem 2rem;

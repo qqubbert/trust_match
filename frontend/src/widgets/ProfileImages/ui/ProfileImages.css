@@ -17,7 +17,7 @@
     height: 100%;
     content: "";
     position: absolute;
-    background-image: url('/images/noise.jpg');
+    background-image: url("/images/noise.jpg");
     opacity: 0.1;
   }
 
@@ -43,7 +43,7 @@
     border-radius: 0;
     overflow: visible;
     .arrow {
-      // padding: 1rem;
+      /*padding: 1rem;*/
       background: transparent;
       &.next {
         right: 0;
@@ -105,12 +105,12 @@
     width: 100%;
     height: 100%;
     display: flex;
-    // overflow-x: auto;
+    /*overflow-x: auto;*/
     align-items: center;
     justify-content: start;
-    // gap: 0.5rem;
-    // transform: translateX(-44%);
-    // flex-direction: column;
+    /*gap: 0.5rem;*/
+    /*transform: translateX(-44%);*/
+    /*flex-direction: column;*/
     transition: 0.2s ease-in-out all;
     position: relative;
     scroll-snap-type: x mandatory;
@@ -131,16 +131,16 @@
     }
 
     > .imgs-container {
-      // position: relative;
-      // left: 0%;
+      /*position: relative;*/
+      /*left: 0%;*/
       width: fit-content;
-      // width: 100%;
+      /*width: 100%;*/
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      // gap: 0.5rem;
-      // margin: 0 25%;
+      /*gap: 0.5rem;*/
+      /*margin: 0 25%;*/
       transition: 0.3s ease-in-out all;
 
       > .transparent {

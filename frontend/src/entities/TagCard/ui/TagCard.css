@@ -33,7 +33,7 @@
     gap: 0.15em;
 
     &.with-rotation {
-      > :where(.top, .middle, .bottom ) {
+      > :where(.top, .middle, .bottom) {
         > .icon {
           svg {
             rotate: -30deg;
@@ -41,28 +41,27 @@
         }
       }
     }
-    
-    > :where(.top, .middle, .bottom ) {
+
+    > :where(.top, .middle, .bottom) {
       position: relative;
       display: flex;
       gap: 1em;
       transform: translateX(24px);
 
       > .icon {
-          width: 1.25em;
-          height: 1.25em;
-          opacity: 0.15;
-    
-          > svg {
-            --icon-size: 1.4em;
-          }
+        width: 1.25em;
+        height: 1.25em;
+        opacity: 0.15;
+
+        > svg {
+          --icon-size: 1.4em;
         }
+      }
     }
 
     > .middle {
       padding-right: 1em;
     }
-
   }
 
   > .gradient-bg {
@@ -89,7 +88,7 @@
     align-items: center;
     justify-content: left;
     gap: 0.5em;
-    
+
     > span {
       color: var(--tag-text-color);
       font-size: var(--tag-font-size);

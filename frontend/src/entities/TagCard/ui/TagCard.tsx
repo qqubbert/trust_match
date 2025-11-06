@@ -1,6 +1,6 @@
 import { useMemo, type FC } from "react";
 
-import "./TagCard.scss";
+import "./TagCard.css";
 
 import { generateGradientBackground } from "@shared/lib/generateGradient";
 
@@ -17,9 +17,8 @@ export const TagCard: FC<TagCardProps> = ({ tagData, className = "" }) => {
   const bgIconLayers = ["top", "middle", "bottom"];
 
   const gradient = useMemo(
-    () =>
-      generateGradientBackground(gradientConfig),
-    [gradientConfig]
+    () => generateGradientBackground(gradientConfig),
+    [gradientConfig],
   );
 
   return (
@@ -32,7 +31,9 @@ export const TagCard: FC<TagCardProps> = ({ tagData, className = "" }) => {
           }}
         />
         <div className="noise-overlay" />
-        <div className={`bg-icons ${tagData.hasBGIconsRotation ? "with-rotation" : ""}`}>
+        <div
+          className={`bg-icons ${tagData.hasBGIconsRotation ? "with-rotation" : ""}`}
+        >
           {bgIconLayers.map((layer) => {
             return (
               <div className={layer} key={layer}>

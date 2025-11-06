@@ -1,5 +1,4 @@
 import { useRef } from "react";
-
 import { PageHeader } from "@widgets/PageHeader";
 
 import { UserCard } from "@entities/UserCard";
@@ -42,11 +41,7 @@ export function CandidatesPage() {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
       },
-      tags: [
-        tags.content.anime,
-        tags.sport.swimming,
-        tags.lifestyle.alcohol,
-      ],
+      tags: [tags.content.anime, tags.sport.swimming, tags.lifestyle.alcohol],
       images: [
         { src: "/images/usersPreview/girls/girl1/girl1_1.jpg", alt: "Юля" },
       ],
@@ -99,11 +94,7 @@ export function CandidatesPage() {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
       },
-      tags: [
-        tags.content.anime,
-        tags.content.movies,
-        tags.content.series,
-      ],
+      tags: [tags.content.anime, tags.content.movies, tags.content.series],
       images: [
         { src: "/images/usersPreview/girls/girl4/girl4_1.jpg", alt: "Лера" },
       ],
@@ -132,11 +123,7 @@ export function CandidatesPage() {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
       },
-      tags: [
-        tags.sport.gym,
-        tags.content.books,
-        tags.content.anime,
-      ],
+      tags: [tags.sport.gym, tags.content.books, tags.content.anime],
       images: [
         { src: "/images/usersPreview/girls/girl5/girl5_2.jpg", alt: "Кира" },
         { src: "/images/usersPreview/girls/girl5/girl5_3.jpg", alt: "Кира" },
@@ -150,10 +137,7 @@ export function CandidatesPage() {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
       },
-      tags: [
-        tags.content.anime,
-        tags.content.games,
-      ],
+      tags: [tags.content.anime, tags.content.games],
       images: [
         { src: "/images/usersPreview/girls/girl6/girl6_1.jpg", alt: "Ксюша" },
       ],
@@ -165,12 +149,18 @@ export function CandidatesPage() {
       <PageHeader title="Кандидаты" />
       <div className="page" ref={pageRef}>
         {users && users.length > 0 ? (
-          users.map((user, i)=>{
+          users.map((user, i) => {
             return (
-              <UserCard user={user} key={user.id || `user-card-${i}`} classes="snap-start"/>
-            )
+              <UserCard
+                user={user}
+                key={user.id || `user-card-${i}`}
+                classes="snap-start"
+              />
+            );
           })
-        ) : (<></>)}
+        ) : (
+          <></>
+        )}
         {/* CandidatesPage */}
       </div>
     </>

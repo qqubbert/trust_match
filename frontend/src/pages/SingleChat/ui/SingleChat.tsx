@@ -1,4 +1,4 @@
-import "./SingleChat.scss";
+import "./SingleChat.css";
 
 import { CustomInput } from "@shared/ui/Input";
 import { PageHeader } from "@widgets/PageHeader";
@@ -66,10 +66,9 @@ export const SingleChatPage = () => {
 
                 const isFirstInGroup =
                   i === 0 || msg.userId !== prevMsg?.userId;
-                const isGrouped = 
-                  (msg.userId === prevMsg?.userId) || 
-                  (msg.userId === nextMsg?.userId)
-                ;
+                const isGrouped =
+                  msg.userId === prevMsg?.userId ||
+                  msg.userId === nextMsg?.userId;
                 const isLastInGroup =
                   i === messages.length - 1 || msg.userId !== nextMsg?.userId;
 
@@ -91,10 +90,15 @@ export const SingleChatPage = () => {
             ) : (
               <></>
             )}
-          <ScrollAnchor behavior="instant"/>
+            <ScrollAnchor behavior="instant" />
           </div>
         </div>
-        <CustomInput classes="chat-input" hasMicBtn={true} hasVideoBtn={true} hasLikeBtn={false}/>
+        <CustomInput
+          classes="chat-input"
+          hasMicBtn={true}
+          hasVideoBtn={true}
+          hasLikeBtn={false}
+        />
       </div>
     </>
   );

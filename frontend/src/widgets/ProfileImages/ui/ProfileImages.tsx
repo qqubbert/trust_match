@@ -1,5 +1,5 @@
 import { type FC, useEffect, useRef, useState } from "react";
-import "./ProfileImages.scss";
+import "./ProfileImages.css";
 import { ProfileImage } from "@entities/ProfileImage";
 import type { ImageType } from "@shared/types/Image";
 import Left from "@icons/Arrows/ArrowLeft.svg?react";
