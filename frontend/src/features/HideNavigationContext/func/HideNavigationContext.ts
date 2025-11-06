@@ -1,3 +1,11 @@
 import { createContext } from "react";
 
-export const HideNavigationContext = createContext(null);
+type HideNavigationContextType = {
+  showNav: boolean;
+  setShowNav: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const HideNavigationContext = createContext<HideNavigationContextType>({
+  showNav: true,
+  setShowNav: () => {},
+});
