@@ -30,6 +30,7 @@ html {
   --nav-selected-text-color: var(--text-bright-color);
   --nav-height: 70px;
   --nav-bg-height: calc(var(--nav-height) + 15px);
+  --chat-input-bottom-padding: 15px;
 
   --person-name-font-size: 48px;
   --person-name-font-weight: 900;
@@ -42,6 +43,7 @@ html {
   --tag-empty-bg: #221010;
   --tag-text-color: #f3f3f3;
 
+  --input-outline-color: rgba(0, 0, 0, 0.2);
   --input-label-font-size: 11px;
   --input-font-size: 14px;
   --input-bg-bright-color: #e6e6e6;
@@ -80,7 +82,7 @@ html {
   --chat-preview-size: 11px;
   --chat-title-size: 20px;
 
-  --chat-self-message-color: #2f835c;
+  --chat-self-message-color: #63aa93;
   --chat-message-color: #2f835c;
   --chat-self-message-bg: var(--chat-self-message-color);
   --chat-message-bg: var(--chat-message-color);

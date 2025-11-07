@@ -9,9 +9,13 @@ import { navPageLinksArray } from "@shared/config/pageLinks";
 
 type NavigationPanelProps = {
   className?: string;
+  hideNav: boolean;
 };
 
-export const NavPanel: FC<NavigationPanelProps> = ({ className = "" }) => {
+export const NavPanel: FC<NavigationPanelProps> = ({
+  className = "",
+  hideNav = true,
+}) => {
   const location = useLocation();
 
   const getSelectedIndex = () => {
@@ -22,7 +26,7 @@ export const NavPanel: FC<NavigationPanelProps> = ({ className = "" }) => {
   const selectedIndex = getSelectedIndex();
 
   return (
-    <header className={`${className} nav-panel `}>
+    <header className={`${className} nav-panel ${hideNav ? "hide" : ""}`}>
       <div className="nav-bg"></div>
       <nav>
         {navPageLinksArray.map((pageLink, i) => {

@@ -88,8 +88,8 @@
             right: -5px;
 
             border: transparent 5px solid;
-            border-bottom: var(--chat-message-bg) 5px solid;
-            border-left: var(--chat-message-bg) 5px solid;
+            border-bottom: var(--chat-self-message-bg) 5px solid;
+            border-left: var(--chat-self-message-bg) 5px solid;
           }
         }
       }

@@ -9,13 +9,22 @@
 
   display: flex;
 
-  
   font-size: var(--nav-font-size);
-  
+
   pointer-events: none;
-  
+
+  animation: 0.2s ease-in-out forwards slideIn;
+
+  &.hide {
+    animation: 0.2s ease-in-out forwards slideOut;
+  }
+
   > .nav-bg {
-    background: linear-gradient(0deg, var(--base-gradient-color-1), var(--base-gradient-color-2));
+    background: linear-gradient(
+      0deg,
+      var(--base-gradient-color-1),
+      var(--base-gradient-color-2)
+    );
 
     position: absolute;
     bottom: 0;
@@ -42,8 +51,5 @@
     justify-content: center;
 
     z-index: 1;
-
   }
-
-  
 }

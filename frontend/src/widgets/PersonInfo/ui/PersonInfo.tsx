@@ -1,4 +1,4 @@
-import { type FC, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import type { PersonInfoType } from "@shared/types/UserTypes";
 
 import "./PersonInfo.css";
@@ -27,6 +27,13 @@ export const PersonInfo: FC<PersonInfoProps> = ({
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [personData, setPersonData] = useState(person);
+  const [focusTarget, setFocusTarget] = useState("");
+
+  useEffect(() => {
+    if (!isEditing) {
+      setFocusTarget("");
+    }
+  }, [isEditing]);
 
   const debouncedUpdate = useDebouncedCallback(() => {
     saveDataFunc();
@@ -52,6 +59,13 @@ export const PersonInfo: FC<PersonInfoProps> = ({
     }
   };
 
+  const emptyInputClickHandler = (item: keyof PersonInfoType) => {
+    if (personData[item] == "") {
+      setIsEditing(true);
+      setFocusTarget(item);
+    }
+  };
+
   return (
     <div
       className={`person-info ${classes} ${isEditing ? "editing" : ""} ${
@@ -61,6 +75,7 @@ export const PersonInfo: FC<PersonInfoProps> = ({
       <div className="name-container">
         <div className="name-and-btn">
           <h1
+            onClick={() => emptyInputClickHandler("name")}
             suppressContentEditableWarning
             contentEditable={isEditing}
             onInput={handleNameInput}
@@ -70,6 +85,7 @@ export const PersonInfo: FC<PersonInfoProps> = ({
             data-placeholder="Введите имя..."
             ref={(el) => {
               if (el && !isEditing) el.textContent = personData.name;
+              if (el && isEditing && focusTarget === "name") el.focus();
             }}
           >
             {/* {personData.name} */}
@@ -89,6 +105,9 @@ export const PersonInfo: FC<PersonInfoProps> = ({
       </div>
       <hr />
       <p
+        onClick={() => {
+          emptyInputClickHandler("description");
+        }}
         className={`editable description ${
           personData.description ? "" : "empty"
         }`}
@@ -99,6 +118,7 @@ export const PersonInfo: FC<PersonInfoProps> = ({
         data-placeholder="Введите описание..."
         ref={(el) => {
           if (el && !isEditing) el.textContent = personData.description;
+          if (el && isEditing && focusTarget === "description") el.focus();
         }}
       >
         {/* {personData.description} */}

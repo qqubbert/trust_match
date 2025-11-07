@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      {showNav && <NavPanel />}
+      <NavPanel hideNav={!showNav} />
       <Outlet />
     </>
   );

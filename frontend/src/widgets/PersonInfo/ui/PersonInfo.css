@@ -16,9 +16,10 @@
   &.editing {
     > .name-container {
       > .name-and-btn {
-        /*outline: var(--hr-color) 1px solid;*/
+        outline: var(--input-outline-color) 1px solid;
         box-shadow: var(--base-shadow);
-        background-color: var(--input-bg);
+        /*background-color: var(--input-bg);*/
+        /*border: 1px;*/
         > * {
           > svg {
             --icons-color: var(--input-icons-color);
@@ -31,10 +32,11 @@
     }
 
     > p {
+      outline: var(--input-outline-color) 1px solid;
       /*text-decoration: underline;*/
       box-shadow: var(--base-shadow);
       color: var(--input-text-color);
-      background-color: var(--input-bg);
+      /*background-color: var(--input-bg);*/
       > svg {
         --icons-color: var(--input-icons-color);
       }
@@ -75,12 +77,18 @@
 
     white-space: pre-line;
 
-    &.editable.empty:empty::before {
-      content: attr(data-placeholder);
-      color: var(--text-color);
-      opacity: 0.15;
-      pointer-events: none;
-      display: block;
+    outline: 1px solid transparent;
+
+    &.empty {
+      cursor: text;
+
+      &.editable:empty::before {
+        content: attr(data-placeholder);
+        color: var(--text-color);
+        opacity: 0.15;
+        pointer-events: none;
+        display: block;
+      }
     }
   }
 
@@ -156,12 +164,16 @@
 
         overflow-x: scroll;
 
-        &.editable.empty:empty::before {
-          content: attr(data-placeholder);
-          color: var(--text-color);
-          opacity: 0.15;
-          pointer-events: none;
-          display: block;
+        &.empty {
+          cursor: text;
+
+          &.editable:empty::before {
+            content: attr(data-placeholder);
+            color: var(--text-color);
+            opacity: 0.15;
+            pointer-events: none;
+            display: block;
+          }
         }
       }
     }

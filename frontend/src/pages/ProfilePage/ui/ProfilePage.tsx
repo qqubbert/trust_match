@@ -13,6 +13,8 @@ import { ProfileImages } from "@widgets/ProfileImages";
 
 import { useTagsStore } from "@shared/data/useTagsStore";
 
+import Settings from "@shared/assets/icons/Settings/Tools.svg?react";
+
 export function ProfilePage() {
   const tags = useTagsStore();
 
@@ -39,9 +41,17 @@ export function ProfilePage() {
     { src: "/images/usersPreview/boys/sasha/sasha6.jpg", alt: "Санёк" },
   ];
 
+  const HeaderBtns = (
+    <>
+      <button>
+        <Settings />
+      </button>
+    </>
+  );
+
   return (
     <>
-      <PageHeader title="Профиль" />
+      <PageHeader title="Профиль" leftBtns={HeaderBtns} />
       <div className="page profile">
         <ProfileImages
           images={ImgsData}

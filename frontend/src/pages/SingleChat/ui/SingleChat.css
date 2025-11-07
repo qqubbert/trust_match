@@ -6,9 +6,17 @@
   padding-bottom: 0;
 
   > .chat-input {
+    animation: showItem 0.2s ease-in-out forwards;
     position: absolute;
 
-    bottom: 5px;
+    padding-bottom: var(--chat-input-bottom-padding);
+    bottom: 0;
+
+    background: linear-gradient(
+      0deg,
+      var(--base-gradient-color-1),
+      var(--base-gradient-color-2)
+    );
   }
 
   > .messages-container {
