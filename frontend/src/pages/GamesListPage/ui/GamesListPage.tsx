@@ -5,33 +5,11 @@ import { GameCard } from "@entities/GameCard";
 
 import "./GamesListPage.css";
 
+import { testGamesData } from "@shared/data/testData/testGames";
+
 export function GamesListPages() {
-  const gamesData = [
-    {
-      id: 3,
-      title: "Флажки",
-      gameIcon: "/images/gameIcons/flags.png",
-      isCompleted: false,
-    },
-    {
-      id: 1,
-      title: "Факты о себе",
-      gameIcon: "/images/gameIcons/facts.png",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Факты о себе 18+",
-      gameIcon: "/images/gameIcons/factsAdult.png",
-      isCompleted: false,
-    },
-    {
-      id: 4,
-      title: "Короткие рассказы",
-      gameIcon: "/images/gameIcons/stories.png",
-      isCompleted: false,
-    },
-  ];
+  const gamesData = testGamesData;
+
   return (
     <>
       <PageHeader title="Игры" />
