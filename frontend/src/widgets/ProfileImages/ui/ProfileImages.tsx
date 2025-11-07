@@ -79,6 +79,7 @@ export const ProfileImages: FC<ProfileImagesProps> = ({
               classes={"profile-image-wrapper snap-center"}
               image={img}
               isSelected={i === selected}
+              hasBorderRadius={isOwn}
               imgRef={(el) => {
                 itemRefs.current[i] = el;
               }}

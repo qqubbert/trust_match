@@ -9,6 +9,7 @@ type ProfileImageProps = {
   isSelected: boolean;
   imgRef: Ref<HTMLDivElement>;
   classes?: string;
+  hasBorderRadius?: boolean;
 };
 
 export const ProfileImage: FC<ProfileImageProps> = ({
@@ -16,13 +17,18 @@ export const ProfileImage: FC<ProfileImageProps> = ({
   isSelected = false,
   imgRef,
   classes = "",
+  hasBorderRadius = false,
 }) => {
   return (
     <div
-      className={`profile-image ${isSelected ? "selected" : ""} ${classes}`}
+      className={`profile-image ${isSelected ? "selected" : ""} ${classes} `}
       ref={imgRef}
     >
-      <img className="image" src={image.src} alt={image.alt} />
+      <img
+        className={`image ${hasBorderRadius ? "hasBorderRadius" : ""}`}
+        src={image.src}
+        alt={image.alt}
+      />
     </div>
   );
 };
