@@ -74,6 +74,8 @@
     &.transparent {
       opacity: 0;
       cursor: default;
+
+      pointer-events: none;
     }
 
     svg {

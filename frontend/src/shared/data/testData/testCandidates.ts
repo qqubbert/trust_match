@@ -7,22 +7,6 @@ export const useTestUsers = () => {
     {
       id: 1,
       person: {
-        name: "Даша",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
-      },
-      tags: [tags.content.series, tags.content.games, tags.content.movies],
-      images: [
-        { src: "/images/usersPreview/girls/dasha/dasha2.jpg", alt: "Даша" },
-        { src: "/images/usersPreview/girls/dasha/dasha4.jpg", alt: "Даша" },
-        { src: "/images/usersPreview/girls/dasha/dasha1.png", alt: "Даша" },
-        { src: "/images/usersPreview/girls/dasha/dasha5.jpg", alt: "Даша" },
-        { src: "/images/usersPreview/girls/dasha/dasha3.jpg", alt: "Даша" },
-      ],
-    },
-    {
-      id: 2,
-      person: {
         name: "Юля",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
@@ -33,7 +17,7 @@ export const useTestUsers = () => {
       ],
     },
     {
-      id: 3,
+      id: 2,
       person: {
         name: "Маша",
         description:
@@ -54,27 +38,7 @@ export const useTestUsers = () => {
       ],
     },
     {
-      id: 4,
-      person: {
-        name: "Василиса",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum magni pariatur magnam unde beatae molestias deleniti reiciendis esse repudiandae, tenetur nihil assumenda voluptate eos praesentium distinctio, quidem exercitationem? Dignissimos, iste.",
-      },
-      tags: [
-        tags.content.movies,
-        tags.content.series,
-        tags.sport.gym,
-        tags.content.books,
-      ],
-      images: [
-        { src: "/images/usersPreview/girls/vasya/vasya1.jpg", alt: "Василиса" },
-        // { src: "/images/usersPreview/girls/girl2/girl2_2.jpg", alt: "Василиса" },
-        // { src: "/images/usersPreview/girls/girl2/girl2_3.jpg", alt: "Василиса" },
-        // { src: "/images/usersPreview/girls/girl2/girl2_4.jpg", alt: "Василиса" },
-      ],
-    },
-    {
-      id: 5,
+      id: 3,
       person: {
         name: "Лера",
         description:
@@ -86,7 +50,7 @@ export const useTestUsers = () => {
       ],
     },
     {
-      id: 6,
+      id: 4,
       person: {
         name: "Саша",
         description:
@@ -103,7 +67,7 @@ export const useTestUsers = () => {
       ],
     },
     {
-      id: 7,
+      id: 5,
       person: {
         name: "Кира",
         description:
@@ -117,7 +81,7 @@ export const useTestUsers = () => {
       ],
     },
     {
-      id: 8,
+      id: 6,
       person: {
         name: "Ксюша",
         description:

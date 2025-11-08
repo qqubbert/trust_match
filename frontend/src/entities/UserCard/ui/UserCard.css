@@ -82,6 +82,7 @@
         background: linear-gradient(0deg, #000000d0, transparent);
 
         > .hint {
+          user-select: none;
           width: 100%;
           text-align: center;
           /*text-wrap: balance;*/
